@@ -9,7 +9,7 @@
     @apply pt-2 flex gap-[12px];
   }
   &__menu-btn {
-    @apply bg-lightGreen rounded-[50px] w-[40px] h-[40px] flex justify-center items-center transition-colors duration-150;
+    @apply bg-lightGreen rounded-[50px] w-[40px] h-[40px] flex justify-center items-center transition-colors duration-150 outline-none;
 
     &:hover {
       @apply bg-green;
@@ -17,27 +17,12 @@
   }
 
   &__touch-btn {
-    @apply hidden tablet:flex rounded-[50px] h-[40px] w-[140px] justify-center items-center transition-colors duration-150 bg-green gap-[12px];
+    @apply hidden tablet:flex rounded-[50px] h-[40px] w-[140px] justify-center items-center transition-colors duration-150 bg-green gap-[12px] outline-none;
     & > span {
       @apply w-[14px] h-[14px] bg-black rounded-[50px];
     }
     &:hover {
       @apply bg-lightGreen;
-    }
-  }
-}
-
-.menu {
-  &-enter {
-    @apply -translate-y-8 opacity-0;
-    &-active {
-      @apply opacity-100 scale-100 transition-all duration-200;
-    }
-  }
-  &-exit {
-    @apply scale-100 opacity-100;
-    &-active {
-      @apply scale-0 opacity-0 transition-all duration-200;
     }
   }
 }

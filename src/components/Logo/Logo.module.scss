@@ -6,6 +6,10 @@
   &__name {
     @apply font-oswald text-[32px] font-medium;
     letter-spacing: -1.32px;
+
+    &:hover {
+      @apply text-green transition-colors duration-150;
+    }
   }
 
   &__text {

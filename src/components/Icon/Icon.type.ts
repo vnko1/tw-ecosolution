@@ -1,6 +1,6 @@
 export enum IconEnum {
   ADD = "add",
-  ARROW = "arrow-right",
+  ARROW = "arrow",
   CALL = "call",
   CPU = "cpu-charge",
   GLOBAL = "global-edit",
@@ -13,4 +13,5 @@ export enum IconEnum {
   SMS = "sms",
   FACEBOOK = "facebook",
   LOGO = "logo",
+  CROSS = "cross",
 }

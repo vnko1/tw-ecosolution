@@ -3,16 +3,13 @@ import { FC, useState } from "react";
 import styles from "./Header.module.scss";
 import { Icon, Logo } from "..";
 import { IconEnum } from "../Icon/Icon.type";
-import { Modal } from "../Modal";
+import { Menu } from "..";
 
 const Header: FC = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  const transitionClassNames = {
-    enter: styles["menu-enter"],
-    enterActive: styles["menu-enter-active"],
-    exit: styles["menu-exit"],
-    exitActive: styles["menu-exit-active"],
+  const onHandleMenuClick = () => {
+    setMenuIsOpen(true);
   };
 
   return (
@@ -21,7 +18,10 @@ const Header: FC = () => {
         <div className={styles["header__wrapper"]}>
           <Logo />
           <div className={styles["header__btn-wrapper"]}>
-            <button className={styles["header__menu-btn"]}>
+            <button
+              className={styles["header__menu-btn"]}
+              onClick={onHandleMenuClick}
+            >
               <Icon size={16} icon={IconEnum.MENU} />
             </button>
             <button className={styles["header__touch-btn"]}>
@@ -30,16 +30,7 @@ const Header: FC = () => {
           </div>
         </div>
       </header>
-      <Modal
-        isOpen={menuIsOpen}
-        setIsOpen={setMenuIsOpen}
-        // transitionClassName={}
-        // transitionTimeOut={}
-        backdropClassName=""
-        bodyClassName=""
-      >
-        <div>MODAL</div>
-      </Modal>
+      <Menu isOpen={menuIsOpen} setIsOpen={setMenuIsOpen} />
     </>
   );
 };
