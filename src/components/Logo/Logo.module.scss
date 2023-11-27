@@ -1,0 +1,19 @@
+.logo {
+  @apply flex gap-0-sm items-center;
+  & > svg {
+    @apply place-self-center pt-2;
+  }
+  &__name {
+    @apply font-oswald text-[32px] font-medium;
+    letter-spacing: -1.32px;
+  }
+
+  &__text {
+    @apply text-xs leading-[9px] pt-2;
+    letter-spacing: -0.4px;
+
+    &--accent {
+      @apply text-green;
+    }
+  }
+}
