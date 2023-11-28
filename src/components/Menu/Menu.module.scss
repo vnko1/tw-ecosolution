@@ -1,0 +1,69 @@
+.menu {
+  &__backdrop {
+    @apply fixed z-50 w-screen h-screen px-2-xs py-[36px] top-0 left-0 bg-[#173d3340] backdrop-blur-[2px];
+  }
+
+  &__body {
+    @apply w-full h-full p-[24px] tablet:max-w-[320px] rounded-[24px] backdrop-blur-[12.5px] bg-[#173d33bf] tablet:ml-auto flex flex-col justify-between;
+  }
+
+  &__btn-wrapper {
+    @apply w-full pb-0-md border-b;
+  }
+
+  &__icon-btn {
+    @apply flex gap-0-sm items-center bg-transparent outline-none text-white text-lg transition-colors duration-150;
+
+    &:hover {
+      @apply text-green;
+    }
+
+    & > span {
+      @apply pt-[0.5px];
+    }
+  }
+
+  &__nav-list {
+    @apply mt-[24px] flex flex-col gap-0-md;
+
+    &-item {
+      &-link {
+        @apply text-[#ffffff40] text-xl;
+
+        &:hover {
+          @apply text-white;
+        }
+
+        .icon {
+          @apply -rotate-[225deg];
+        }
+      }
+    }
+  }
+
+  &__soc-list {
+    @apply flex gap-0-md;
+    &-item {
+      &-link {
+        @apply text-white transition-colors duration-150;
+
+        &:hover {
+          @apply text-green;
+        }
+      }
+    }
+  }
+
+  &-enter {
+    @apply translate-x-full opacity-0;
+    &-active {
+      @apply opacity-100 translate-x-0  transition-all duration-200;
+    }
+  }
+  &-exit {
+    @apply translate-x-0 opacity-100;
+    &-active {
+      @apply translate-x-full opacity-0 transition-all duration-200;
+    }
+  }
+}
