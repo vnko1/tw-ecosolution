@@ -73,12 +73,8 @@ const Modal: FC<MenuProps> = ({ setIsOpen, isOpen }) => {
       mountOnEnter
       unmountOnExit
     >
-      <div
-        ref={nodeRef}
-        className={styles["menu__backdrop"]}
-        onClick={onHandleClick}
-      >
-        <div className={styles["menu__body"]}>
+      <div className={styles["menu__backdrop"]} onClick={onHandleClick}>
+        <div className={styles["menu__body"]} ref={nodeRef}>
           <div className={styles["menu__content-wrapper"]}>
             <div className={styles["menu__btn-wrapper"]}>
               <button
