@@ -1,0 +1,25 @@
+.values {
+  @apply grid grid-cols-2 grid-rows-2 gap-2-md tablet:grid-cols-[1fr_1fr_2fr];
+  &__item {
+    @apply tablet:max-h-[220px] laptop:max-h-[340px] overflow-hidden;
+    &.image {
+      @apply hidden tablet:block relative;
+
+      .positioned {
+        @apply laptop:absolute -top-[75px];
+      }
+    }
+  }
+}
+
+.col {
+  &-1 {
+    grid-column-end: span 2;
+  }
+  &-2 {
+    grid-column-end: auto;
+  }
+  &-3 {
+    grid-column-end: auto;
+  }
+}
