@@ -50,6 +50,7 @@ export default {
         green: "#97D28B",
         red: "#D28B8B",
         white: "#FFF",
+        black: "#292D32",
       },
       fontSize: {
         xxs: "10px",

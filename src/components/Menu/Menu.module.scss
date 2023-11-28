@@ -23,19 +23,19 @@
     }
   }
 
-  &__list {
+  &__nav-list {
     @apply mt-[24px] flex flex-col gap-0-md;
 
     &-item {
       &-link {
-        @apply text-[#ffffff40] text-xl flex gap-0-md transition-colors duration-150;
-
-        & > span {
-          @apply relative -rotate-[225deg];
-        }
+        @apply text-[#ffffff40] text-xl;
 
         &:hover {
           @apply text-white;
+        }
+
+        .icon {
+          @apply -rotate-[225deg];
         }
       }
     }

@@ -6,7 +6,7 @@ import { useGetScreenSize, useSwipe } from "../../hooks";
 import styles from "./Menu.module.scss";
 
 import Animation from "../Animation/Animation";
-import { Icon } from "..";
+import { Icon, UIButton } from "..";
 import { IconEnum } from "../Icon/Icon.type";
 
 const navItem = [
@@ -87,16 +87,20 @@ const Modal: FC<MenuProps> = ({ setIsOpen, isOpen }) => {
                 close
               </button>
             </div>
-            <ul className={styles["menu__list"]}>
-              {navItem.map(({ title, link }, index) => {
+            <ul className={styles["menu__nav-list"]}>
+              {navItem.map((item, index) => {
                 return (
-                  <li key={index} className={styles["menu__list-item"]}>
-                    <a href={link} className={styles["menu__list-item-link"]}>
-                      {title}
-                      <span>
-                        <Icon icon={IconEnum.ARROW} size={16} />
-                      </span>
-                    </a>
+                  <li key={index} className={styles["menu__nav-list-item"]}>
+                    <UIButton
+                      onClick={() => {}}
+                      variant="text"
+                      classNames={styles["menu__nav-list-item-link"]}
+                      icon={IconEnum.ARROW}
+                      iconSize={16}
+                      iconClassNames={styles["icon"]}
+                    >
+                      {item.title}
+                    </UIButton>
                   </li>
                 );
               })}

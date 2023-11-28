@@ -1,11 +1,10 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layout } from "../components";
 
+const router = createBrowserRouter([{ path: "/", element: <Layout /> }]);
+
 function App() {
-  return (
-    <Layout>
-      <h1>Vite + React</h1>
-    </Layout>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

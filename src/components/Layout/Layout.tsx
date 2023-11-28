@@ -1,14 +1,15 @@
 import { FC } from "react";
-import { ILayoutProps } from "./Layout.type";
 
 import styles from "./Layout.module.scss";
 import { Header } from "..";
 
-const Layout: FC<ILayoutProps> = ({ children }) => {
+const Layout: FC = () => {
   return (
     <>
       <Header />
-      <main className={styles["layout__body"]}>{children}</main>
+      <main className={styles["layout__body"]}>
+        <h1>Vite + React</h1>
+      </main>
     </>
   );
 };
