@@ -1,4 +1,5 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
+import cn from "classnames";
 
 import styles from "./Header.module.scss";
 import { Logo, UIButton } from "..";
@@ -7,15 +8,34 @@ import { Menu } from "..";
 
 const Header: FC = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [scrollTop, setScrollTop] = useState(0);
+
+  useEffect(() => {
+    const onHandleScroll = () => {
+      setTimeout(() => {
+        setScrollTop(document.documentElement.scrollTop);
+      }, 100);
+    };
+
+    window.addEventListener("scroll", onHandleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onHandleScroll);
+    };
+  }, []);
 
   const onHandleMenuClick = () => {
     setMenuIsOpen(true);
   };
 
-  const onHandleBtnClick = () => {};
+  const onHandleTouchBtnClick = () => {};
+
+  const headerClassNames = cn(styles["header"], {
+    [styles["header--accent"]]: scrollTop > 0,
+  });
   return (
     <>
-      <header className={styles["header"]}>
+      <header className={headerClassNames}>
         <div className={styles["header__wrapper"]}>
           <Logo />
           <div className={styles["header__btn-wrapper"]}>
@@ -28,7 +48,7 @@ const Header: FC = () => {
             />
 
             <UIButton
-              onClick={onHandleBtnClick}
+              onClick={onHandleTouchBtnClick}
               classNames={styles["header__touch-btn"]}
               variant="contained"
               iconSize={14}
