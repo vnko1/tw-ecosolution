@@ -20,6 +20,7 @@ const UIButton: FC<UIButtonProps> = ({
       [styles["contained"]]: variant === "contained",
       [styles["icon"]]: variant === "icon",
       [styles["text"]]: variant === "text",
+      [styles["outlined"]]: variant === "outlined",
     },
 
     classNames
