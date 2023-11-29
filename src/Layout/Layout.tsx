@@ -1,11 +1,8 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 import styles from "./Layout.module.scss";
-import { About, Cases, Header, Hero } from "../components";
+import { About, Header, Hero, Electricity, Cases } from "../components";
 
-const Electricity = React.lazy(
-  () => import("../components/Electricity/Electricity")
-);
 const Layout: FC = () => {
   return (
     <>

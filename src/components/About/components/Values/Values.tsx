@@ -42,7 +42,7 @@ const Values: FC = () => {
         if (el.image && el.alt)
           return (
             <li key={i} className={classNames(styles["image"])}>
-              <img src={el.image} alt={el.alt} />
+              <img src={el.image} alt={el.alt} className={styles["image"]} />
             </li>
           );
         if (el.icon)

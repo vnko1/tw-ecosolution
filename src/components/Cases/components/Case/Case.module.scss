@@ -1,6 +1,6 @@
 .case {
-  @apply w-full  tablet:max-w-[342px] laptop:max-w-[596px];
-
+  @apply w-full;
+  // tablet:max-w-[342px] laptop:max-w-[596px]
   &__content-wrapper {
     @apply bg-[#EAEDF1] p-1-sm laptop:px-4-xl laptop:py-3-lg;
   }

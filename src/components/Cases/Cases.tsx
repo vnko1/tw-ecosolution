@@ -1,10 +1,12 @@
-import { FC } from "react";
+import { FC, useRef, useState } from "react";
 
 import styles from "./Cases.module.scss";
 import { UIButton } from "..";
 import { IconEnum } from "../Icon/Icon.type";
-import Case from "./components/Case/Case";
+import CasesCarousel from "./components/Carousel/CasesCarousel";
+
 import tourbines from "../../assets/images/tourbines.webp";
+import Carousel from "react-multi-carousel";
 
 const caseValue = {
   image: tourbines,
@@ -13,7 +15,23 @@ const caseValue = {
   text: "Wind Power for auto field irrigation",
   date: "July 2023",
 };
+
+const cases = [caseValue, caseValue, caseValue, caseValue, caseValue];
+
 const Cases: FC = () => {
+  const [activeStep, setActiveStep] = useState(1);
+  const maxSteps = cases.length;
+
+  const carouselRef = useRef<Carousel | null>(null);
+
+  const handleNext = () => {
+    carouselRef.current && carouselRef.current.next(1);
+  };
+
+  const handleBack = () => {
+    carouselRef.current && carouselRef.current.previous(1);
+  };
+
   return (
     <section className={"section-paddings"}>
       <div className={styles["cases__container"]}>
@@ -23,18 +41,19 @@ const Cases: FC = () => {
         <div className={styles["cases__data-wrapper"]}>
           <div className={styles["data"]}>
             <p className={styles["data__text-value"]}>
-              01 <span>/ 05</span>
+              {activeStep.addLeadingZero()}{" "}
+              <span>/ {maxSteps.addLeadingZero()}</span>
             </p>
             <div className={styles["data__btn-group"]}>
               <UIButton
-                onClick={() => {}}
+                onClick={handleBack}
                 variant="icon"
                 iconSize={36}
                 classNames={`${styles["button"]} ${styles["button-icon"]}`}
                 icon={IconEnum.ARROW}
               />
               <UIButton
-                onClick={() => {}}
+                onClick={handleNext}
                 variant="icon"
                 iconSize={36}
                 iconClassNames={styles["button__icon"]}
@@ -45,9 +64,11 @@ const Cases: FC = () => {
           </div>
         </div>
       </div>
-      <ul className={styles["cases__carousel"]}>
-        <Case {...caseValue} />
-      </ul>
+      <CasesCarousel
+        values={cases}
+        setStep={setActiveStep}
+        carouselRef={carouselRef}
+      />
     </section>
   );
 };
