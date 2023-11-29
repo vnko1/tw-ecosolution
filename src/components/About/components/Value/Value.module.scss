@@ -1,5 +1,5 @@
 .value {
-  @apply p-1-sm bg-[#EAEDF1] laptop:py-4-xl laptop:px-2-md h-full;
+  @apply h-full p-1-sm bg-[#EAEDF1] laptop:py-4-xl laptop:px-2-md;
 
   .title {
     @apply flex items-center gap-0-md pb-3-sm tablet:pb-5-xs laptop:pb-[94px] border-b border-b-green;

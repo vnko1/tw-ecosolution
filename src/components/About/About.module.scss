@@ -1,6 +1,4 @@
 .about {
-  @apply py-3-lg tablet:py-[100px] laptop:py-[120px];
-
   &__text-wrapper {
     @apply flex flex-col gap-2-md mb-3-lg tablet:flex-row tablet:gap-[82px] tablet:mb-[100px] laptop:gap-[254px] laptop:mb-[122px];
   }

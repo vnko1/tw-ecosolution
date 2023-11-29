@@ -24,7 +24,7 @@ h1 {
 }
 
 h2 {
-  @apply font-oswald text-[28px] leading-[28px] tablet:text-[36px] tablet:leading-[36px] laptop:text-[48px] laptop:leading-[48px]  text-darkGreen;
+  @apply font-oswald text-[28px] leading-[28px] tablet:text-[36px] tablet:leading-[36px] laptop:text-[48px] laptop:leading-[48px] uppercase text-darkGreen;
 }
 
 h3 {
@@ -53,4 +53,8 @@ a:not([class]) {
 
 .no-scroll {
   @apply overflow-hidden;
+}
+
+.section-paddings {
+  @apply pt-3-lg tablet:pt-[100px] laptop:pt-[120px];
 }

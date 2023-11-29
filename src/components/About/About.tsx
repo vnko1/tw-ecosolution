@@ -4,7 +4,7 @@ import Values from "./components/Values/Values";
 
 const About: FC = () => {
   return (
-    <section className={styles["about"]} id="about">
+    <section className="section-paddings" id="about">
       <div className={styles["about__text-wrapper"]}>
         <h2 className={styles["title"]}>Main values of our company</h2>
         <p className={styles["text"]}>
