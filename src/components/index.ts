@@ -6,3 +6,4 @@ export { default as Menu } from "./Menu/Menu";
 export { default as UIButton } from "./UIButton/UIButton";
 export { default as Hero } from "./Hero/Hero";
 export { default as About } from "./About/About";
+export { default as Electricity } from "./Electricity/Electricity";
