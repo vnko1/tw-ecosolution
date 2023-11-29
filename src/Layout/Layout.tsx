@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import styles from "./Layout.module.scss";
-import { Header, Hero } from "../components";
+import { About, Header, Hero } from "../components";
 
 const Layout: FC = () => {
   return (
@@ -9,6 +9,7 @@ const Layout: FC = () => {
       <Header />
       <main className={styles["layout__body"]}>
         <Hero />
+        <About />
       </main>
     </>
   );
