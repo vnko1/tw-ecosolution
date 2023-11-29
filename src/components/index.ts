@@ -7,3 +7,4 @@ export { default as UIButton } from "./UIButton/UIButton";
 export { default as Hero } from "./Hero/Hero";
 export { default as About } from "./About/About";
 export { default as Electricity } from "./Electricity/Electricity";
+export { default as Cases } from "./Cases/Cases";
