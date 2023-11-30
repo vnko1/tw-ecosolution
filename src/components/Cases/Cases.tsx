@@ -1,4 +1,5 @@
 import { FC, useRef, useState } from "react";
+import Carousel from "react-multi-carousel";
 
 import styles from "./Cases.module.scss";
 import { UIButton } from "..";
@@ -6,17 +7,24 @@ import { IconEnum } from "../Icon/Icon.type";
 import CasesCarousel from "./components/Carousel/CasesCarousel";
 
 import tourbines from "../../assets/images/tourbines.webp";
-import Carousel from "react-multi-carousel";
 
-const caseValue = {
+const caseValue1 = {
   image: tourbines,
   alt: "Tourbines",
-  title: "Zhytomyr city Private Enterprise “Bosch",
+  title: "Lviv Region, Radekhiv town Private Enterprise “ZAKHIDNYI BUH”",
   text: "Wind Power for auto field irrigation",
   date: "July 2023",
 };
 
-const cases = [caseValue, caseValue, caseValue, caseValue, caseValue];
+const caseValue2 = {
+  image: tourbines,
+  alt: "Tourbines",
+  title: "Zhytomyr city Private Enterprise “Bosch”",
+  text: "Solar Panels for industrial use",
+  date: "November 2023",
+};
+
+const cases = [caseValue1, caseValue2, caseValue1, caseValue2, caseValue1];
 
 const Cases: FC = () => {
   const [activeStep, setActiveStep] = useState(1);

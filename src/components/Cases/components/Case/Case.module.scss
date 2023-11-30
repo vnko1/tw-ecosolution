@@ -1,14 +1,14 @@
 .case {
-  @apply w-full;
-  // tablet:max-w-[342px] laptop:max-w-[596px]
+  @apply w-full h-full;
+
   &__content-wrapper {
-    @apply bg-[#EAEDF1] p-1-sm laptop:px-4-xl laptop:py-3-lg;
+    @apply h-full bg-[#EAEDF1] p-1-sm laptop:px-4-xl laptop:py-3-lg;
   }
 }
 
 .content {
   &__top {
-    @apply border-b border-b-green pb-2-xs tablet:pb-1-lg flex justify-between items-center;
+    @apply border-b min-h-[108px] border-b-green pb-2-xs tablet:pb-1-lg flex justify-between items-center;
   }
 
   &__bottom {
