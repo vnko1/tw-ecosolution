@@ -1,7 +1,14 @@
 import { FC } from "react";
 
 import styles from "./Layout.module.scss";
-import { About, Header, Hero, Electricity, Cases } from "../components";
+import {
+  About,
+  Header,
+  Hero,
+  Electricity,
+  Cases,
+  Questions,
+} from "../components";
 
 const Layout: FC = () => {
   return (
@@ -12,6 +19,7 @@ const Layout: FC = () => {
         <About />
         <Electricity />
         <Cases />
+        <Questions />
       </main>
     </>
   );

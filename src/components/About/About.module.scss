@@ -15,7 +15,7 @@
 }
 
 .title {
-  @apply w-full tablet:max-w-[272px] laptop:max-w-[364px];
+  @apply w-full max-w-[320px] tablet:max-w-[272px] laptop:max-w-[364px];
 }
 
 .text {

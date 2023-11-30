@@ -6,7 +6,7 @@
   }
 
   .title {
-    @apply laptop:max-w-[612px];
+    @apply max-w-[360px] laptop:max-w-[612px];
   }
 
   &__content-wrapper {
