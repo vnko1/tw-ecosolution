@@ -1,8 +1,9 @@
 import { FC } from "react";
 
+import { IconEnum } from "@/src/types";
 import styles from "./Logo.module.scss";
-import { Icon } from "..";
-import { IconEnum } from "../Icon/Icon.type";
+
+import { Icon } from "@/src/components";
 
 const Logo: FC = () => {
   return (

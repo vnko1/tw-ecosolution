@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { useGetScreenSize } from "..";
+import { useGetScreenSize } from "@/src/hooks";
 
 import { UseSwipeArg } from "./useSwipe.type";
 

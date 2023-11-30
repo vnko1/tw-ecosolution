@@ -1,9 +1,10 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 
-import { IconEnum } from "../../../Icon/Icon.type";
+import { IconEnum } from "@/src/types";
 import styles from "./Contacts.module.scss";
-import { Icon } from "../../../";
+
+import { Icon } from "@/src/components";
 
 const Contacts: FC = () => {
   return (

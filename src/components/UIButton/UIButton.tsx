@@ -3,7 +3,7 @@ import cn from "classnames";
 
 import { UIButtonProps } from "./UIButton.type";
 import styles from "./UIButton.module.scss";
-import { Icon } from "..";
+import { Icon } from "@/src/components";
 
 const UIButton: FC<UIButtonProps> = ({
   children,
@@ -12,6 +12,7 @@ const UIButton: FC<UIButtonProps> = ({
   icon,
   iconSize,
   iconClassNames,
+  type = "button",
   ...props
 }) => {
   const btnClassNames = cn(
@@ -27,7 +28,7 @@ const UIButton: FC<UIButtonProps> = ({
   );
   if (variant === "icon")
     return (
-      <button {...props} className={btnClassNames}>
+      <button {...props} type={type} className={btnClassNames}>
         <span className={iconClassNames}>
           {icon ? <Icon icon={icon} size={iconSize} /> : null}
         </span>
@@ -35,7 +36,7 @@ const UIButton: FC<UIButtonProps> = ({
     );
 
   return (
-    <button {...props} className={btnClassNames}>
+    <button {...props} className={btnClassNames} type={type}>
       {children}
       {icon ? (
         <span className={iconClassNames}>

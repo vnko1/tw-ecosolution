@@ -1,16 +1,5 @@
 .contacts {
-  @apply flex flex-col gap-2-md max-w-[280px] laptop:max-w-[320px];
-
-  &__tel-wrapper {
-  }
-
-  &__mail-wrapper {
-  }
-  &__address-wrapper {
-  }
-
-  &__soc-wrapper {
-  }
+  @apply flex flex-col gap-2-md max-w-[280px] tablet:max-w-[250px] laptop:gap-3-sm laptop:max-w-full;
 }
 
 .wrapper {
@@ -21,13 +10,13 @@
 }
 
 .label {
-  @apply mb-0-md;
+  @apply mb-0-md laptop:mb-1-lg;
 }
 
 .icon-link {
   @apply flex items-center gap-0-md text-lg tracking-[-0.8px] laptop:text-xl laptop:tracking-[-0.96px];
   &.soc {
-    @apply p-1-sm;
+    @apply p-1-sm laptop:p-0;
   }
 
   &:hover,

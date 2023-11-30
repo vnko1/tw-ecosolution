@@ -9,7 +9,7 @@ import {
   Cases,
   Questions,
   ContactUs,
-} from "../components";
+} from "@/src/components";
 
 const Layout: FC = () => {
   return (

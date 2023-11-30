@@ -1,8 +1,9 @@
 import { FC } from "react";
 import { CaseProps } from "./Case.type";
+import { IconEnum } from "@/src/types";
 import styles from "./Case.module.scss";
-import { UIButton } from "../../../";
-import { IconEnum } from "../../../Icon/Icon.type";
+
+import { UIButton } from "@/src/components";
 
 const Case: FC<CaseProps> = ({ image, alt, title, text, date }) => {
   return (

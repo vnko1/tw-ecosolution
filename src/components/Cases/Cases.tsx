@@ -1,34 +1,65 @@
 import { FC, useRef, useState } from "react";
 import Carousel from "react-multi-carousel";
 
+import { IconEnum } from "@/src/types";
 import styles from "./Cases.module.scss";
-import { UIButton } from "..";
-import { IconEnum } from "../Icon/Icon.type";
+
+import { UIButton } from "@/src/components";
 import CasesCarousel from "./components/Carousel/CasesCarousel";
 
-import tourbines from "../../assets/images/tourbines.webp";
+import { casesValue } from "./values";
 
-const caseValue1 = {
-  image: tourbines,
-  alt: "Tourbines",
-  title: "Lviv Region, Radekhiv town Private Enterprise “ZAKHIDNYI BUH”",
-  text: "Wind Power for auto field irrigation",
-  date: "July 2023",
-};
+// import tourbines from "@/src/assets/images/tourbines.webp";
+// import nuclearPlant from "@/src/assets/images/nuclear-plant.webp";
+// import solarPanel from "@/src/assets/images/solar-panel.webp";
+// import transformator from "@/src/assets/images/transformator.webp";
+// import windmills from "@/src/assets/images/windwills.webp";
 
-const caseValue2 = {
-  image: tourbines,
-  alt: "Tourbines",
-  title: "Zhytomyr city Private Enterprise “Bosch”",
-  text: "Solar Panels for industrial use",
-  date: "November 2023",
-};
+// const caseValue1 = {
+//   image: tourbines,
+//   alt: "Tourbines",
+//   title: "Lviv Region, Radekhiv town Private Enterprise “ZAKHIDNYI BUH”",
+//   text: "Wind Power for auto field irrigation",
+//   date: "July 2023",
+// };
 
-const cases = [caseValue1, caseValue2, caseValue1, caseValue2, caseValue1];
+// const caseValue2 = {
+//   image: solarPanel,
+//   alt: "Solar panels",
+//   title: "Zhytomyr city Private Enterprise “Bosch”",
+//   text: "Solar Panels for industrial use",
+//   date: "November 2023",
+// };
+
+// const caseValue3 = {
+//   image: transformator,
+//   alt: "Transformator",
+//   title: "Rivne city Private Enterprise “Biotech”",
+//   text: "Thermal modules",
+//   date: "October 2023",
+// };
+
+// const caseValue4 = {
+//   image: windmills,
+//   alt: "Transformator",
+//   title: "Kherson city Private Enterprise “HealthyFarm”",
+//   text: "Windmills",
+//   date: "September 2021",
+// };
+
+// const caseValue5 = {
+//   image: nuclearPlant,
+//   alt: "Nuclear plant",
+//   title: "Zaporizhia city Private Enterprise “Biotech”",
+//   text: "Mini nuclear stations",
+//   date: "May 2021",
+// };
+
+// const cases = [caseValue1, caseValue2, caseValue1, caseValue2, caseValue1];
 
 const Cases: FC = () => {
   const [activeStep, setActiveStep] = useState(1);
-  const maxSteps = cases.length;
+  const maxSteps = casesValue.length;
 
   const carouselRef = useRef<Carousel | null>(null);
 
@@ -73,7 +104,7 @@ const Cases: FC = () => {
         </div>
       </div>
       <CasesCarousel
-        values={cases}
+        values={casesValue}
         setStep={setActiveStep}
         carouselRef={carouselRef}
       />

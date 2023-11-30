@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from "react";
 import cn from "classnames";
 
+import { IconEnum } from "@/src/types";
 import styles from "./Header.module.scss";
-import { Logo, UIButton } from "..";
-import { IconEnum } from "../Icon/Icon.type";
-import { Menu } from "..";
+
+import { Logo, UIButton, Menu } from "@/src/components";
 
 const Header: FC = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
