@@ -8,7 +8,7 @@
 
 .content {
   &__top {
-    @apply border-b min-h-[108px] border-b-green pb-2-xs tablet:pb-1-lg flex justify-between items-center;
+    @apply border-b min-h-[108px] laptop:min-h-[125px] border-b-green pb-2-xs tablet:pb-1-lg flex justify-between items-center;
   }
 
   &__bottom {
