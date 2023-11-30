@@ -17,7 +17,7 @@
 }
 
 .title {
-  @apply max-w-[320px];
+  @apply max-w-[320px] tablet:max-w-[348px] laptop:max-w-[398px];
 }
 
 .button {
