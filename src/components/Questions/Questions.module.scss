@@ -1,0 +1,30 @@
+.questions {
+  &__wrapper {
+    &-text-content {
+      @apply tablet:flex tablet:flex-row-reverse tablet:justify-between;
+    }
+  }
+}
+
+.wrapper {
+  &__title {
+    @apply mb-2-md tablet:mb-0 tablet:flex tablet:flex-col tablet:w-1/2 tablet:pl-2-md tablet:justify-between laptop:items-center;
+  }
+
+  &__accordion {
+    @apply tablet:w-1/2;
+  }
+}
+
+.title {
+  @apply max-w-[320px];
+}
+
+.button {
+  &.btn {
+    @apply hidden tablet:flex;
+  }
+  &--mob.btn {
+    @apply mt-2-md tablet:hidden;
+  }
+}

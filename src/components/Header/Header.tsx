@@ -51,7 +51,7 @@ const Header: FC = () => {
               onClick={onHandleTouchBtnClick}
               classNames={styles["header__touch-btn"]}
               variant="contained"
-              iconSize={14}
+              iconSize={7}
               iconClassNames={styles["icon"]}
               icon={IconEnum.ARROW}
             >
