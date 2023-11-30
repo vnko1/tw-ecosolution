@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import styles from "./Layout.module.scss";
-import { About, Electricity, Header, Hero } from "../components";
+import { About, Header, Hero, Electricity, Cases } from "../components";
 
 const Layout: FC = () => {
   return (
@@ -11,6 +11,7 @@ const Layout: FC = () => {
         <Hero />
         <About />
         <Electricity />
+        <Cases />
       </main>
     </>
   );

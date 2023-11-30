@@ -11,6 +11,7 @@ export default {
         md: "480px",
         tablet: "768px",
         laptop: "1280px",
+        laptop_md: "1440px",
       },
 
       spacing: {
@@ -62,7 +63,7 @@ export default {
         xxl: "26px",
       },
       fontFamily: {
-        fira: ["Fira-Sans"],
+        fira: ["Fira+Sans"],
         oswald: ["Oswald"],
       },
     },
