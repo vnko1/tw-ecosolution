@@ -8,6 +8,7 @@ import {
   Electricity,
   Cases,
   Questions,
+  ContactUs,
 } from "../components";
 
 const Layout: FC = () => {
@@ -20,6 +21,7 @@ const Layout: FC = () => {
         <Electricity />
         <Cases />
         <Questions />
+        <ContactUs />
       </main>
     </>
   );

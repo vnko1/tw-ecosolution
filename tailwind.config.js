@@ -63,7 +63,7 @@ export default {
         xxl: "26px",
       },
       fontFamily: {
-        fira: ["Fira+Sans"],
+        fira: ["Fira Sans"],
         oswald: ["Oswald"],
       },
     },

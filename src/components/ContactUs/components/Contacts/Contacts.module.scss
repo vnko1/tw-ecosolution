@@ -1,0 +1,39 @@
+.contacts {
+  @apply flex flex-col gap-2-md max-w-[280px] laptop:max-w-[320px];
+
+  &__tel-wrapper {
+  }
+
+  &__mail-wrapper {
+  }
+  &__address-wrapper {
+  }
+
+  &__soc-wrapper {
+  }
+}
+
+.wrapper {
+  @apply flex flex-col gap-1-sm;
+  &.soc {
+    @apply flex-row gap-0-md;
+  }
+}
+
+.label {
+  @apply mb-0-md;
+}
+
+.icon-link {
+  @apply flex items-center gap-0-md text-lg tracking-[-0.8px] laptop:text-xl laptop:tracking-[-0.96px];
+  &.soc {
+    @apply p-1-sm;
+  }
+
+  &:hover,
+  &:focus {
+    & > span {
+      @apply text-green duration-150 transition-colors;
+    }
+  }
+}
