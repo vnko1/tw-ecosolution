@@ -29,14 +29,12 @@ const ContactForm: FC = () => {
     values: ContactsFormValue,
     { resetForm }: FormikHelpers<ContactsFormValue>
   ) => {
-    // {
-    //   fullName, email, phone, message;
-    // }
     const keys = Object.keys(values);
 
     const trimmedValue = keys.reduce((acc, el) => {
       return { [el]: values[el as keyof ContactsFormValue].trim(), ...acc };
     }, {});
+
     console.log(
       "🚀 ~ file: ContactForm.tsx:40 ~ trimmedValue ~ trimmedValue:",
       trimmedValue

@@ -1,3 +1,5 @@
 export * from "./useGetScreenSize/useGetScreenSize";
-export * from "./useOusideClick/useOusideClick";
+export * from "./useOutsideClick/useOutsideClick";
 export * from "./useSwipe/useSwipe";
+export * from "./useNav/useNav";
+export * from "./useOnScreen/useOnScreen";

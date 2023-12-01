@@ -20,7 +20,7 @@ ol {
 }
 
 h1 {
-  @apply text-[36px] leading-[36px] tablet:text-[48px] tablet:leading-[48px] laptop:text-[64px] laptop:leading-[64px] uppercase text-darkGreen;
+  @apply font-oswald text-[36px] leading-[36px] tablet:text-[48px] tablet:leading-[48px] laptop:text-[64px] laptop:leading-[64px] uppercase text-darkGreen;
 }
 
 h2 {

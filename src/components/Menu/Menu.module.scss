@@ -30,12 +30,12 @@
       &-link {
         @apply text-[#ffffff40] text-xl;
 
-        &:hover {
-          @apply text-white;
+        &.active {
+          @apply text-green;
         }
 
-        .icon {
-          @apply -rotate-[225deg];
+        &:hover {
+          @apply text-white;
         }
       }
     }
@@ -66,4 +66,8 @@
       @apply translate-x-full opacity-0 transition-all duration-200;
     }
   }
+}
+
+.icon {
+  @apply -rotate-[225deg];
 }

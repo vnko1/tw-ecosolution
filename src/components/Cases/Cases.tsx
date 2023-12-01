@@ -1,7 +1,8 @@
 import { FC, useRef, useState } from "react";
 import Carousel from "react-multi-carousel";
 
-import { IconEnum } from "@/src/types";
+import { useNav } from "@/src/hooks";
+import { IconEnum, SectionsId } from "@/src/types";
 import styles from "./Cases.module.scss";
 
 import { UIButton } from "@/src/components";
@@ -10,6 +11,7 @@ import CasesCarousel from "./components/Carousel/CasesCarousel";
 import { casesValue } from "./values";
 
 const Cases: FC = () => {
+  const casesRef = useNav(SectionsId.CASES);
   const [activeStep, setActiveStep] = useState(1);
   const maxSteps = casesValue.length;
 
@@ -24,7 +26,11 @@ const Cases: FC = () => {
   };
 
   return (
-    <section className={"section-paddings"}>
+    <section
+      ref={casesRef}
+      id={SectionsId.CASES}
+      className={"section-paddings"}
+    >
       <div className={styles["cases__container"]}>
         <div className={styles["cases__title-wrapper"]}>
           <h2 className={styles["title"]}>Successful cases of our company</h2>

@@ -15,3 +15,14 @@ export enum IconEnum {
   LOGO = "logo",
   CROSS = "cross",
 }
+
+export enum SectionsId {
+  HEADER = "header",
+  HERO = "hero",
+  ABOUT = "about",
+  ELECTRICITY = "electricity",
+  CASES = "cases",
+  QUESTIONS = "questions",
+  CONTACT_US = "contactUs",
+  FOOTER = "footer",
+}
