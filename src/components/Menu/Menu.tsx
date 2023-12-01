@@ -62,7 +62,7 @@ const Modal: FC<MenuProps> = ({ setIsOpen, isOpen }) => {
   };
 
   const renderNavButtons = (value: string, index: number) => {
-    const id = value.split(" ").join("").toLowerCase();
+    const id = value.split(" ").join("_").toLowerCase();
     const navButtonClassNames = cn(styles["menu__nav-list-item-link"], {
       [styles["active"]]: activeLinkId === id,
     });

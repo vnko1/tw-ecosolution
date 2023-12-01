@@ -23,6 +23,6 @@ export enum SectionsId {
   ELECTRICITY = "electricity",
   CASES = "cases",
   QUESTIONS = "faq",
-  CONTACT_US = "contactus",
+  CONTACT_US = "contact_us",
   FOOTER = "footer",
 }
