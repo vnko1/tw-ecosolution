@@ -1,8 +1,14 @@
 .case {
   @apply w-full h-full;
+  &__image-thumb {
+    @apply overflow-hidden h-full max-h-[294px] tablet:max-h-[192px] laptop:max-h-[335px];
 
-  &__content-wrapper {
-    @apply h-full bg-[#EAEDF1] p-1-sm laptop:px-4-xl laptop:py-3-lg;
+    & > img {
+      @apply h-full w-full;
+    }
+  }
+  &__content {
+    @apply bg-[#EAEDF1] p-1-sm laptop:px-4-xl laptop:py-3-lg;
   }
 }
 
@@ -20,7 +26,7 @@
   }
 }
 .title {
-  @apply max-w-[230px] text-[18px] tracking-[-0.72px] tablet:text-lg tablet:tracking-[-0.8px] laptop:text-[24px] laptop:tracking-[-0.96px];
+  @apply w-2/3 text-[18px] tracking-[-0.72px] tablet:text-lg tablet:tracking-[-0.8px] laptop:text-[24px] laptop:tracking-[-0.96px];
 }
 
 .button {

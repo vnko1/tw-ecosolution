@@ -1,6 +1,6 @@
 import tourbines from "@/src/assets/images/tourbines.webp";
 import nuclearPlant from "@/src/assets/images/nuclear-plant.webp";
-
+import panels from "@/src/assets/images/solar.webp";
 import transformator from "@/src/assets/images/transformator.webp";
 import windmills from "@/src/assets/images/windwills.webp";
 
@@ -13,7 +13,7 @@ const caseValue1 = {
 };
 
 const caseValue2 = {
-  image: tourbines,
+  image: panels,
   alt: "Solar panels",
   title: "Zhytomyr city Private Enterprise “Bosch”",
   text: "Solar Panels for industrial use",

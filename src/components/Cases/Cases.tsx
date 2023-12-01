@@ -9,54 +9,6 @@ import CasesCarousel from "./components/Carousel/CasesCarousel";
 
 import { casesValue } from "./values";
 
-// import tourbines from "@/src/assets/images/tourbines.webp";
-// import nuclearPlant from "@/src/assets/images/nuclear-plant.webp";
-// import solarPanel from "@/src/assets/images/solar-panel.webp";
-// import transformator from "@/src/assets/images/transformator.webp";
-// import windmills from "@/src/assets/images/windwills.webp";
-
-// const caseValue1 = {
-//   image: tourbines,
-//   alt: "Tourbines",
-//   title: "Lviv Region, Radekhiv town Private Enterprise “ZAKHIDNYI BUH”",
-//   text: "Wind Power for auto field irrigation",
-//   date: "July 2023",
-// };
-
-// const caseValue2 = {
-//   image: solarPanel,
-//   alt: "Solar panels",
-//   title: "Zhytomyr city Private Enterprise “Bosch”",
-//   text: "Solar Panels for industrial use",
-//   date: "November 2023",
-// };
-
-// const caseValue3 = {
-//   image: transformator,
-//   alt: "Transformator",
-//   title: "Rivne city Private Enterprise “Biotech”",
-//   text: "Thermal modules",
-//   date: "October 2023",
-// };
-
-// const caseValue4 = {
-//   image: windmills,
-//   alt: "Transformator",
-//   title: "Kherson city Private Enterprise “HealthyFarm”",
-//   text: "Windmills",
-//   date: "September 2021",
-// };
-
-// const caseValue5 = {
-//   image: nuclearPlant,
-//   alt: "Nuclear plant",
-//   title: "Zaporizhia city Private Enterprise “Biotech”",
-//   text: "Mini nuclear stations",
-//   date: "May 2021",
-// };
-
-// const cases = [caseValue1, caseValue2, caseValue1, caseValue2, caseValue1];
-
 const Cases: FC = () => {
   const [activeStep, setActiveStep] = useState(1);
   const maxSteps = casesValue.length;

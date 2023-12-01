@@ -11,23 +11,21 @@ const Case: FC<CaseProps> = ({ image, alt, title, text, date }) => {
       <div className={styles["case__image-thumb"]}>
         <img src={image} alt={alt} />
       </div>
-      <div>
-        <div className={styles["case__content-wrapper"]}>
-          <div className={styles["content__top"]}>
-            <p className={styles["title"]}>{title}</p>
-            <UIButton
-              onClick={() => {}}
-              variant="icon"
-              icon={IconEnum.ARROW}
-              classNames={`${styles["button"]} ${styles["button-icon"]}`}
-              iconClassNames={styles["button__icon"]}
-              iconSize={28}
-            />
-          </div>
-          <div className={styles["content__bottom"]}>
-            <p className={styles["text"]}>{text}</p>
-            <p className={styles["date"]}>{date}</p>
-          </div>
+      <div className={styles["case__content"]}>
+        <div className={styles["content__top"]}>
+          <p className={styles["title"]}>{title}</p>
+          <UIButton
+            onClick={() => {}}
+            variant="icon"
+            icon={IconEnum.ARROW}
+            classNames={`${styles["button"]} ${styles["button-icon"]}`}
+            iconClassNames={styles["button__icon"]}
+            iconSize={28}
+          />
+        </div>
+        <div className={styles["content__bottom"]}>
+          <p className={styles["text"]}>{text}</p>
+          <p className={styles["date"]}>{date}</p>
         </div>
       </div>
     </div>
