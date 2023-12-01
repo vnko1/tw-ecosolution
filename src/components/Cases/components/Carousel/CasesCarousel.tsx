@@ -51,7 +51,6 @@ const CasesCarousel: FC<CasesCarouselProps> = ({
       infinite={true}
       autoPlaySpeed={3000}
       transitionDuration={500}
-      // autoPlay
       shouldResetAutoplay
       beforeChange={onHandleSteps}
       arrows={false}

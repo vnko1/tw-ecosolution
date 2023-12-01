@@ -1,13 +1,16 @@
 import { FC } from "react";
 
-import { IconEnum } from "@/src/types";
+import { useNav } from "@/src/hooks";
+import { IconEnum, SectionsId } from "@/src/types";
 import styles from "./Footer.module.scss";
 import { NavLink, Logo, UIButton } from "..";
 import { Link } from "react-router-dom";
+import { scrollTo } from "@/src/utils";
 
 const Footer: FC = () => {
+  const footerRef = useNav(SectionsId.FOOTER);
   return (
-    <footer className={styles["footer"]}>
+    <footer ref={footerRef} id={SectionsId.FOOTER} className={styles["footer"]}>
       <div className={styles["footer__container-1"]}>
         <Logo />
       </div>
@@ -18,6 +21,7 @@ const Footer: FC = () => {
           icon={IconEnum.ARROW}
           iconClassNames={styles["button__icon"]}
           iconSize={16}
+          onClick={() => scrollTo(SectionsId.HERO)}
         />
       </div>
       <div className={styles["footer__container-3"]}>

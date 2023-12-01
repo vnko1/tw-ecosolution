@@ -1,11 +1,14 @@
 import { FC, useEffect, useState } from "react";
 
+import { useNav } from "@/src/hooks";
+import { SectionsId } from "@/src/types";
 import { getDataFromLS, setDataToLS } from "@/src/utils";
 import styles from "./Electricity.module.scss";
 
 const initialValue = 1134147814;
 
 const Electricity: FC = () => {
+  const electricityRef = useNav(SectionsId.ELECTRICITY);
   const initialState = getDataFromLS("value")
     ? Number(getDataFromLS("value"))
     : initialValue;
@@ -27,7 +30,11 @@ const Electricity: FC = () => {
   }, [eValue]);
 
   return (
-    <section className="section-paddings">
+    <section
+      ref={electricityRef}
+      id={SectionsId.ELECTRICITY}
+      className="section-paddings"
+    >
       <h2 className={styles["title"]}>
         Electricity we produced <br /> for all time
       </h2>

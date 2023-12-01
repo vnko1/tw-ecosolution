@@ -1,19 +1,22 @@
-import { createPortal } from "react-dom";
 import { FC, MouseEvent, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
+import cn from "classnames";
 
 import { useGetScreenSize, useSwipe } from "@/src/hooks";
-import { IconEnum } from "@/src/types";
+import { useAppContext } from "@/src/context";
+import { IconEnum, SectionsId } from "@/src/types";
 import { MenuProps } from "./Menu.type";
 import styles from "./Menu.module.scss";
 
 import { Animation, Icon, UIButton } from "@/src/components";
+import { scrollTo } from "@/src/utils";
 
 const navItem = [
-  { title: "Main", link: "#" },
-  { title: "About", link: "#" },
-  { title: "Cases", link: "#" },
-  { title: "FAQ", link: "#" },
-  { title: "Contact Us", link: "#" },
+  { title: "Main", id: SectionsId.HERO },
+  { title: "About", id: SectionsId.ABOUT },
+  { title: "Cases", id: SectionsId.CASES },
+  { title: "FAQ", id: SectionsId.QUESTIONS },
+  { title: "Contact Us", id: SectionsId.CONTACT_US },
 ];
 
 const socItem = [
@@ -25,6 +28,7 @@ const Modal: FC<MenuProps> = ({ setIsOpen, isOpen }) => {
   const nodeRef = useRef(null);
   const [screen] = useGetScreenSize();
 
+  const { activeLinkId } = useAppContext();
   useSwipe(setIsOpen);
 
   useEffect(() => {
@@ -63,6 +67,32 @@ const Modal: FC<MenuProps> = ({ setIsOpen, isOpen }) => {
     exitActive: styles["menu-exit-active"],
   };
 
+  const renderNavButtons = (title: string, id: string, index: number) => {
+    const navButtonClassNames = cn(styles["menu__nav-list-item-link"], {
+      [styles["active"]]: activeLinkId === id,
+    });
+
+    const onHandleNavClick = (id: string) => {
+      setIsOpen(false);
+      scrollTo(id);
+    };
+
+    return (
+      <li key={index} className={styles["menu__nav-list-item"]}>
+        <UIButton
+          onClick={() => onHandleNavClick(id)}
+          variant="text"
+          classNames={navButtonClassNames}
+          icon={IconEnum.ARROW}
+          iconSize={16}
+          iconClassNames={styles["icon"]}
+        >
+          {title}
+        </UIButton>
+      </li>
+    );
+  };
+
   return createPortal(
     <Animation
       in={isOpen}
@@ -87,22 +117,9 @@ const Modal: FC<MenuProps> = ({ setIsOpen, isOpen }) => {
               </button>
             </div>
             <ul className={styles["menu__nav-list"]}>
-              {navItem.map((item, index) => {
-                return (
-                  <li key={index} className={styles["menu__nav-list-item"]}>
-                    <UIButton
-                      onClick={() => {}}
-                      variant="text"
-                      classNames={styles["menu__nav-list-item-link"]}
-                      icon={IconEnum.ARROW}
-                      iconSize={16}
-                      iconClassNames={styles["icon"]}
-                    >
-                      {item.title}
-                    </UIButton>
-                  </li>
-                );
-              })}
+              {navItem.map(({ title, id }, index) =>
+                renderNavButtons(title, id, index)
+              )}
             </ul>
           </div>
           <div className={styles["menu__soc-wrapper"]}>

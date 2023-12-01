@@ -1,10 +1,14 @@
 import { FC } from "react";
+
+import { useNav } from "@/src/hooks";
+import { SectionsId } from "@/src/types";
 import styles from "./About.module.scss";
 import Values from "./components/Values/Values";
 
 const About: FC = () => {
+  const aboutRef = useNav(SectionsId.ABOUT);
   return (
-    <section className="section-paddings" id="about">
+    <section ref={aboutRef} id={SectionsId.ABOUT} className="section-paddings">
       <div className={styles["about__text-wrapper"]}>
         <div className={styles["wrapper__title"]}>
           <h2 className={styles["title"]}>Main values of our company</h2>

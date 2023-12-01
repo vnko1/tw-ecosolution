@@ -1,12 +1,15 @@
 import { FC, useEffect, useState } from "react";
 import cn from "classnames";
 
-import { IconEnum } from "@/src/types";
+import { useNav } from "@/src/hooks";
+import { scrollTo } from "@/src/utils";
+import { IconEnum, SectionsId } from "@/src/types";
 import styles from "./Header.module.scss";
 
 import { Logo, UIButton, Menu } from "@/src/components";
 
 const Header: FC = () => {
+  const headerRef = useNav(SectionsId.HEADER);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [scrollTop, setScrollTop] = useState(0);
 
@@ -28,14 +31,20 @@ const Header: FC = () => {
     setMenuIsOpen(true);
   };
 
-  const onHandleTouchBtnClick = () => {};
+  const onHandleTouchBtnClick = () => {
+    scrollTo("contactUs");
+  };
 
   const headerClassNames = cn(styles["header"], {
     [styles["header--accent"]]: scrollTop > 0,
   });
   return (
     <>
-      <header className={headerClassNames}>
+      <header
+        ref={headerRef}
+        id={SectionsId.HEADER}
+        className={headerClassNames}
+      >
         <div className={styles["header__wrapper"]}>
           <Logo />
           <div className={styles["header__btn-wrapper"]}>

@@ -1,14 +1,17 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 
-import { IconEnum } from "@/src/types";
+import { useNav } from "@/src/hooks";
+import { IconEnum, SectionsId } from "@/src/types";
 import styles from "./Hero.module.scss";
 
 import { UIButton } from "@/src/components";
+import { scrollTo } from "@/src/utils";
 
 const Hero: FC = () => {
+  const heroRef = useNav(SectionsId.HERO);
   return (
-    <section className={styles["hero"]}>
+    <section ref={heroRef} id={SectionsId.HERO} className={styles["hero"]}>
       <div className={styles["hero__wrapper"]}>
         <h1 className={styles["title"]}>RENEWABLE ENERGY For any task</h1>
         <div className={styles["hero__content-wrapper"]}>
@@ -18,7 +21,7 @@ const Hero: FC = () => {
             biomass
           </p>
           <UIButton
-            onClick={() => {}}
+            onClick={() => scrollTo(SectionsId.CASES)}
             variant="outlined"
             iconSize={16}
             icon={IconEnum.ARROW}
