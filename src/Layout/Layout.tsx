@@ -9,20 +9,26 @@ import {
   Cases,
   Questions,
   ContactUs,
+  Footer,
 } from "@/src/components";
 
 const Layout: FC = () => {
   return (
     <>
       <Header />
-      <main className={styles["layout__body"]}>
-        <Hero />
-        <About />
-        <Electricity />
-        <Cases />
-        <Questions />
-        <ContactUs />
+      <main className={styles["layout"]}>
+        <div className={styles["layout__container"]}>
+          <Hero />
+          <About />
+          <Electricity />
+          <Cases />
+          <Questions />
+          <ContactUs />
+        </div>
       </main>
+      <div className={styles["layout__container"]}>
+        <Footer />
+      </div>
     </>
   );
 };
