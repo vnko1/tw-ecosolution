@@ -23,9 +23,6 @@
   }
 }
 
-.error {
-  @apply text-red;
-  &__text {
-    @apply absolute text-right text-xs tracking-[-0.48px] right-0 -bottom-2-xs laptop:-bottom-2-md;
-  }
+.error__text {
+  @apply text-red absolute text-right text-xs tracking-[-0.48px] right-0 -bottom-2-xs laptop:-bottom-2-md;
 }
