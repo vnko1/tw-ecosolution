@@ -40,7 +40,8 @@
     }
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:disabled {
       @apply bg-darkGreen border-darkGreen text-green;
     }
   }

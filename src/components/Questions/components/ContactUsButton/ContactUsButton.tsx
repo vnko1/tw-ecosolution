@@ -1,10 +1,11 @@
 import { FC } from "react";
-import { ContactUsProps } from "./ContactUs.type";
-import { IconEnum } from "../../../Icon/Icon.type";
-import styles from "./ContactUs.module.scss";
-import { UIButton } from "../../../";
 
-const ContactUs: FC<ContactUsProps> = ({ classNames }) => {
+import { ContactUsButtonProps } from "./ContactUsButton.type";
+import { IconEnum } from "@/src/types";
+import styles from "./ContactUsButton.module.scss";
+import { UIButton } from "@/src/components";
+
+const ContactUsButton: FC<ContactUsButtonProps> = ({ classNames }) => {
   const onClick = () => {};
   return (
     <div className={`${styles["wrapper"]} ${classNames}`}>
@@ -23,4 +24,4 @@ const ContactUs: FC<ContactUsProps> = ({ classNames }) => {
   );
 };
 
-export default ContactUs;
+export default ContactUsButton;

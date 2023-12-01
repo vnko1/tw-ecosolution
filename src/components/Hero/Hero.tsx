@@ -1,9 +1,10 @@
 import { FC } from "react";
-
-import styles from "./Hero.module.scss";
-import { UIButton } from "..";
-import { IconEnum } from "../Icon/Icon.type";
 import { Link } from "react-router-dom";
+
+import { IconEnum } from "@/src/types";
+import styles from "./Hero.module.scss";
+
+import { UIButton } from "@/src/components";
 
 const Hero: FC = () => {
   return (

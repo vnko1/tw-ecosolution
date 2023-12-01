@@ -8,7 +8,8 @@ import {
   Electricity,
   Cases,
   Questions,
-} from "../components";
+  ContactUs,
+} from "@/src/components";
 
 const Layout: FC = () => {
   return (
@@ -20,6 +21,7 @@ const Layout: FC = () => {
         <Electricity />
         <Cases />
         <Questions />
+        <ContactUs />
       </main>
     </>
   );

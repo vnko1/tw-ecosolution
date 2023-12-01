@@ -1,11 +1,10 @@
 import { FC } from "react";
-
+import Carousel, { CarouselInternalState } from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 import { CasesCarouselProps } from "./CasesCarousel.type";
 import styles from "./CasesCarousel.module.scss";
 import Case from "../Case/Case";
-import Carousel, { CarouselInternalState } from "react-multi-carousel";
 
 const responsive = {
   desktop: {
@@ -52,7 +51,7 @@ const CasesCarousel: FC<CasesCarouselProps> = ({
       infinite={true}
       autoPlaySpeed={3000}
       transitionDuration={500}
-      autoPlay
+      // autoPlay
       shouldResetAutoplay
       beforeChange={onHandleSteps}
       arrows={false}

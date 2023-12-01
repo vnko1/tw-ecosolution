@@ -1,9 +1,8 @@
 import { FC } from "react";
 
-import styles from "./Questions.module.scss";
-import AccordionQuestions from "./components/Accordion/AccordionQuestions";
 import { Question } from "./Questions.type";
-import ContactUs from "./components/ContactButton/ContactUs";
+import styles from "./Questions.module.scss";
+import { AccordionQuestions, ContactUsButton } from "./components";
 
 const faq: Question[] = [
   {
@@ -49,12 +48,16 @@ const Questions: FC = () => {
       <div className={styles["questions__wrapper-text-content"]}>
         <div className={styles["wrapper__title"]}>
           <h2 className={styles["title"]}>Frequently Asked Questions</h2>
-          <ContactUs classNames={`${styles["button"]} ${styles["btn"]}`} />
+          <ContactUsButton
+            classNames={`${styles["button"]} ${styles["btn"]}`}
+          />
         </div>
         <div className={styles["wrapper__accordion"]}>
           <AccordionQuestions questions={faq} />
         </div>
-        <ContactUs classNames={`${styles["button--mob"]} ${styles["btn"]}`} />
+        <ContactUsButton
+          classNames={`${styles["button--mob"]} ${styles["btn"]}`}
+        />
       </div>
     </section>
   );

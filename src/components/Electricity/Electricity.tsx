@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 
-import { getDataFromLS, setDataToLS } from "../../utils";
+import { getDataFromLS, setDataToLS } from "@/src/utils";
 import styles from "./Electricity.module.scss";
 
 const initialValue = 1134147814;

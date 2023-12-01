@@ -1,12 +1,12 @@
 import { FC } from "react";
 import cn from "classnames";
 
-import { IconEnum } from "../../../Icon/Icon.type";
+import { IconEnum } from "@/src/types";
 import styles from "./Values.module.scss";
 import Value from "../Value/Value";
 
-import windFarm from "../../../../assets/images/wind-farm.webp";
-import workers from "../../../../assets/images/workers.webp";
+import windFarm from "@/src/assets/images/wind-farm.webp";
+import workers from "@/src/assets/images/workers.webp";
 
 const values = [
   {

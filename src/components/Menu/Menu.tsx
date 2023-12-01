@@ -1,13 +1,12 @@
 import { createPortal } from "react-dom";
 import { FC, MouseEvent, useEffect, useRef } from "react";
 
+import { useGetScreenSize, useSwipe } from "@/src/hooks";
+import { IconEnum } from "@/src/types";
 import { MenuProps } from "./Menu.type";
-import { useGetScreenSize, useSwipe } from "../../hooks";
 import styles from "./Menu.module.scss";
 
-import Animation from "../Animation/Animation";
-import { Icon, UIButton } from "..";
-import { IconEnum } from "../Icon/Icon.type";
+import { Animation, Icon, UIButton } from "@/src/components";
 
 const navItem = [
   { title: "Main", link: "#" },
