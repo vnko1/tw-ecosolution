@@ -2,22 +2,16 @@ import { FC, MouseEvent, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import cn from "classnames";
 
+import { scrollTo } from "@/src/utils";
 import { useGetScreenSize, useSwipe } from "@/src/hooks";
 import { useAppContext } from "@/src/context";
-import { IconEnum, SectionsId } from "@/src/types";
+import { IconEnum } from "@/src/types";
 import { MenuProps } from "./Menu.type";
 import styles from "./Menu.module.scss";
 
 import { Animation, Icon, UIButton } from "@/src/components";
-import { scrollTo } from "@/src/utils";
 
-const navItem = [
-  { title: "Main", id: SectionsId.HERO },
-  { title: "About", id: SectionsId.ABOUT },
-  { title: "Cases", id: SectionsId.CASES },
-  { title: "FAQ", id: SectionsId.QUESTIONS },
-  { title: "Contact Us", id: SectionsId.CONTACT_US },
-];
+const navItem = ["Main", "About", "Cases", "FAQ", "Contact Us"];
 
 const socItem = [
   { icon: IconEnum.FACEBOOK, link: "#" },
@@ -67,7 +61,8 @@ const Modal: FC<MenuProps> = ({ setIsOpen, isOpen }) => {
     exitActive: styles["menu-exit-active"],
   };
 
-  const renderNavButtons = (title: string, id: string, index: number) => {
+  const renderNavButtons = (value: string, index: number) => {
+    const id = value.split(" ").join("").toLowerCase();
     const navButtonClassNames = cn(styles["menu__nav-list-item-link"], {
       [styles["active"]]: activeLinkId === id,
     });
@@ -87,7 +82,7 @@ const Modal: FC<MenuProps> = ({ setIsOpen, isOpen }) => {
           iconSize={16}
           iconClassNames={styles["icon"]}
         >
-          {title}
+          {value}
         </UIButton>
       </li>
     );
@@ -117,9 +112,7 @@ const Modal: FC<MenuProps> = ({ setIsOpen, isOpen }) => {
               </button>
             </div>
             <ul className={styles["menu__nav-list"]}>
-              {navItem.map(({ title, id }, index) =>
-                renderNavButtons(title, id, index)
-              )}
+              {navItem.map((el, index) => renderNavButtons(el, index))}
             </ul>
           </div>
           <div className={styles["menu__soc-wrapper"]}>

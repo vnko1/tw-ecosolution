@@ -32,7 +32,7 @@ const Header: FC = () => {
   };
 
   const onHandleTouchBtnClick = () => {
-    scrollTo("contactUs");
+    scrollTo(SectionsId.CONTACT_US);
   };
 
   const headerClassNames = cn(styles["header"], {
