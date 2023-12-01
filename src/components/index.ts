@@ -1,6 +1,7 @@
 export { default as Header } from "./Header/Header";
 export { default as Icon } from "./Icon/Icon";
 export { default as Logo } from "./Logo/Logo";
+export { default as NavLink } from "./NavLink/NavLink";
 export { default as Animation } from "./Animation/Animation";
 export { default as Menu } from "./Menu/Menu";
 export { default as UIButton } from "./UIButton/UIButton";
@@ -10,3 +11,4 @@ export { default as Electricity } from "./Electricity/Electricity";
 export { default as Cases } from "./Cases/Cases";
 export { default as Questions } from "./Questions/Questions";
 export { default as ContactUs } from "./ContactUs/ContactUs";
+export { default as Footer } from "./Footer/Footer";
