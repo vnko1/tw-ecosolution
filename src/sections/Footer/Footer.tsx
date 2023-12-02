@@ -1,11 +1,11 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 import { useNav } from "@/src/hooks";
+import { scrollTo } from "@/src/utils";
 import { IconEnum, SectionsId } from "@/src/types";
 import styles from "./Footer.module.scss";
-import { NavLink, Logo, UIButton } from "..";
-import { Link } from "react-router-dom";
-import { scrollTo } from "@/src/utils";
+import { NavLink, Logo, UIButton } from "@/src/components";
 
 const Footer: FC = () => {
   const footerRef = useNav(SectionsId.FOOTER);

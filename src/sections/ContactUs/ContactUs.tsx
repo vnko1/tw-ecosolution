@@ -4,8 +4,7 @@ import { SectionsId } from "@/src/types";
 import { useNav } from "@/src/hooks";
 import styles from "./ContactUs.module.scss";
 
-import Contacts from "./components/Contacts/Contacts";
-import ContactForm from "./components/Form/ContactForm";
+import { Contacts, ContactForm } from "./components";
 
 const ContactUs: FC = () => {
   const contactUsRef = useNav(SectionsId.CONTACT_US);

@@ -6,7 +6,7 @@ import { IconEnum, SectionsId } from "@/src/types";
 import styles from "./Cases.module.scss";
 
 import { UIButton } from "@/src/components";
-import CasesCarousel from "./components/Carousel/CasesCarousel";
+import { CasesCarousel } from "./components";
 
 import { casesValue } from "./values";
 

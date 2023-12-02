@@ -6,8 +6,7 @@ import { validationSchema } from "./validationSchema";
 import { IconEnum } from "@/src/types";
 import styles from "./ContactForm.module.scss";
 
-import { UIButton } from "@/src/components";
-import TextField from "./components/TextField/TextField";
+import { UIButton, TextField } from "@/src/components";
 
 const initialValues: ContactsFormValue = {
   fullName: "",

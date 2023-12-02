@@ -1,9 +1,10 @@
 import { FC } from "react";
 
 import { useNav } from "@/src/hooks";
-import styles from "./Questions.module.scss";
-import { AccordionQuestions, ContactUsButton } from "./components";
 import { SectionsId } from "@/src/types";
+import styles from "./Questions.module.scss";
+
+import { AccordionQuestions, ContactUsButton } from "./components";
 
 import { faq } from "./questionsValues";
 

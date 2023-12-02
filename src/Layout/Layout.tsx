@@ -10,7 +10,7 @@ import {
   Questions,
   ContactUs,
   Footer,
-} from "@/src/components";
+} from "@/src/sections";
 
 const Layout: FC = () => {
   return (
