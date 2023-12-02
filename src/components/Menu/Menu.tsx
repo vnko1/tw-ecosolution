@@ -2,22 +2,16 @@ import { FC, MouseEvent, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import cn from "classnames";
 
+import { scrollTo } from "@/src/utils";
 import { useGetScreenSize, useSwipe } from "@/src/hooks";
 import { useAppContext } from "@/src/context";
-import { IconEnum, SectionsId } from "@/src/types";
+import { IconEnum } from "@/src/types";
 import { MenuProps } from "./Menu.type";
 import styles from "./Menu.module.scss";
 
 import { Animation, Icon, UIButton } from "@/src/components";
-import { scrollTo } from "@/src/utils";
 
-const navItem = [
-  { title: "Main", id: SectionsId.HERO },
-  { title: "About", id: SectionsId.ABOUT },
-  { title: "Cases", id: SectionsId.CASES },
-  { title: "FAQ", id: SectionsId.QUESTIONS },
-  { title: "Contact Us", id: SectionsId.CONTACT_US },
-];
+const navItem = ["Main", "About", "Cases", "FAQ", "Contact Us"];
 
 const socItem = [
   { icon: IconEnum.FACEBOOK, link: "#" },
@@ -67,8 +61,9 @@ const Modal: FC<MenuProps> = ({ setIsOpen, isOpen }) => {
     exitActive: styles["menu-exit-active"],
   };
 
-  const renderNavButtons = (title: string, id: string, index: number) => {
-    const navButtonClassNames = cn(styles["menu__nav-list-item-link"], {
+  const renderNavButtons = (value: string, index: number) => {
+    const id = value.split(" ").join("_").toLowerCase();
+    const navButtonClassNames = cn(styles["nav-button"], {
       [styles["active"]]: activeLinkId === id,
     });
 
@@ -78,16 +73,16 @@ const Modal: FC<MenuProps> = ({ setIsOpen, isOpen }) => {
     };
 
     return (
-      <li key={index} className={styles["menu__nav-list-item"]}>
+      <li key={index}>
         <UIButton
           onClick={() => onHandleNavClick(id)}
           variant="text"
           classNames={navButtonClassNames}
           icon={IconEnum.ARROW}
           iconSize={16}
-          iconClassNames={styles["icon"]}
+          iconClassNames={styles["nav-icon"]}
         >
-          {title}
+          {value}
         </UIButton>
       </li>
     );
@@ -102,12 +97,12 @@ const Modal: FC<MenuProps> = ({ setIsOpen, isOpen }) => {
       mountOnEnter
       unmountOnExit
     >
-      <div className={styles["menu__backdrop"]} onClick={onHandleClick}>
+      <div className={styles["menu"]} onClick={onHandleClick}>
         <div className={styles["menu__body"]} ref={nodeRef}>
-          <div className={styles["menu__content-wrapper"]}>
-            <div className={styles["menu__btn-wrapper"]}>
+          <div className={styles["body"]}>
+            <div className={styles["body__header"]}>
               <button
-                className={styles["menu__icon-btn"]}
+                className={styles["close-button"]}
                 onClick={() => setIsOpen(false)}
               >
                 <span>
@@ -116,20 +111,18 @@ const Modal: FC<MenuProps> = ({ setIsOpen, isOpen }) => {
                 close
               </button>
             </div>
-            <ul className={styles["menu__nav-list"]}>
-              {navItem.map(({ title, id }, index) =>
-                renderNavButtons(title, id, index)
-              )}
+            <ul className={styles["body__nav-list"]}>
+              {navItem.map((el, index) => renderNavButtons(el, index))}
             </ul>
           </div>
-          <div className={styles["menu__soc-wrapper"]}>
-            <ul className={styles["menu__soc-list"]}>
+          <div>
+            <ul className={styles["body__soc-list"]}>
               {socItem.map(({ link, icon }, index) => {
                 return (
-                  <li key={index} className={styles["menu__soc-list-item"]}>
+                  <li key={index}>
                     <a
                       href={link}
-                      className={`${styles["menu__soc-list-item-link"]} animation`}
+                      className={`${styles["soc-link"]} animation`}
                     >
                       <Icon icon={icon} size={24} />
                     </a>

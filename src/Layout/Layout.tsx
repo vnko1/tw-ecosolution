@@ -10,13 +10,13 @@ import {
   Questions,
   ContactUs,
   Footer,
-} from "@/src/components";
+} from "@/src/sections";
 
 const Layout: FC = () => {
   return (
     <>
       <Header />
-      <main className={styles["layout"]}>
+      <main>
         <div className={styles["layout__container"]}>
           <Hero />
           <About />

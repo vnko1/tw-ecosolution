@@ -18,11 +18,11 @@ export enum IconEnum {
 
 export enum SectionsId {
   HEADER = "header",
-  HERO = "hero",
+  HERO = "main",
   ABOUT = "about",
   ELECTRICITY = "electricity",
   CASES = "cases",
-  QUESTIONS = "questions",
-  CONTACT_US = "contactUs",
+  QUESTIONS = "faq",
+  CONTACT_US = "contact_us",
   FOOTER = "footer",
 }

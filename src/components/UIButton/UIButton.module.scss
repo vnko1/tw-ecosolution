@@ -40,9 +40,12 @@
     }
 
     &:hover,
-    &:focus,
-    &:disabled {
+    &:focus {
       @apply bg-darkGreen border-darkGreen text-green;
+    }
+
+    &:disabled {
+      @apply bg-gray-400 border-gray-400 text-white;
     }
   }
 }
