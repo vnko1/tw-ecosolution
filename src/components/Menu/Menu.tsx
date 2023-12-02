@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import cn from "classnames";
 
 import { scrollTo } from "@/src/utils";
-import { useGetScreenSize, useSwipe } from "@/src/hooks";
+import { useSwipe } from "@/src/hooks";
 import { useAppContext } from "@/src/context";
 import { IconEnum } from "@/src/types";
 import { MenuProps } from "./Menu.type";
@@ -20,7 +20,6 @@ const socItem = [
 
 const Modal: FC<MenuProps> = ({ setIsOpen, isOpen }) => {
   const nodeRef = useRef(null);
-  const [screen] = useGetScreenSize();
 
   const { activeLinkId } = useAppContext();
   useSwipe(setIsOpen);
@@ -40,11 +39,9 @@ const Modal: FC<MenuProps> = ({ setIsOpen, isOpen }) => {
   }, []);
 
   useEffect(() => {
-    if (screen < 769) {
-      isOpen && document.body.classList.add(styles["no-scroll"]);
-      !isOpen && document.body.classList.remove(styles["no-scroll"]);
-    }
-  }, [isOpen, screen]);
+    isOpen && document.body.classList.add("no-scroll");
+    !isOpen && document.body.classList.remove("no-scroll");
+  }, [isOpen]);
 
   const onHandleClick = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
