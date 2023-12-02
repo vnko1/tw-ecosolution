@@ -6,6 +6,10 @@
 
   &__body {
     @apply w-full h-full p-[24px] tablet:max-w-[320px] rounded-[24px] backdrop-blur-[12.5px] bg-[#173d33bf] tablet:ml-auto flex flex-col justify-between;
+
+    @media screen and (min-height: 0px) and (max-height: 399px) {
+      border-radius: 0;
+    }
   }
   &-enter {
     @apply translate-x-full opacity-0;
