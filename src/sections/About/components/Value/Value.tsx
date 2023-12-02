@@ -13,7 +13,7 @@ const Value: FC<ValueProps> = ({ icon, title, text }) => {
   const iconSize = isLaptopScreen ? 24 : 16;
 
   return (
-    <div className={styles["value"]}>
+    <div className={styles["value-wrapper"]}>
       <h3 className={styles["title"]}>
         <Icon icon={icon} size={iconSize} />
         {title}

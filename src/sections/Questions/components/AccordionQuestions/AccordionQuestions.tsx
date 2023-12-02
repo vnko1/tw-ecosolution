@@ -36,13 +36,13 @@ const AccordionQuestions: FC<AccordionQuestionsProps> = ({ questions }) => {
                 {expanded === expandValue ? "-" : "+"}
               </span>
               <AccordionSummary
-                className={`${styles["accordion__wrapper-box"]} ${styles["box"]}`}
+                className={`${styles["wrapper__content"]} ${styles["content"]}`}
               >
                 <h4 className={styles["summary"]}>{summary}</h4>
               </AccordionSummary>
             </div>
             <AccordionDetails
-              className={`${styles["accordion__wrapper-box"]} ${styles["box"]} ${styles["pads"]}`}
+              className={`${styles["wrapper__content"]} ${styles["content"]} ${styles["pads"]}`}
             >
               <p className={styles["details"]}>{details}</p>
             </AccordionDetails>

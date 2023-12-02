@@ -12,9 +12,9 @@ const Hero: FC = () => {
   const heroRef = useNav(SectionsId.HERO);
   return (
     <section ref={heroRef} id={SectionsId.HERO} className={styles["hero"]}>
-      <div className={styles["hero__wrapper"]}>
+      <div className={styles["hero__content"]}>
         <h1 className={styles["title"]}>RENEWABLE ENERGY For any task</h1>
-        <div className={styles["hero__content-wrapper"]}>
+        <div className={styles["content"]}>
           <p className={styles["text"]}>
             Development and implementation of renewable non-polluting energy
             sources, generating power generation using energy wind, sun, water,
@@ -32,7 +32,7 @@ const Hero: FC = () => {
           </UIButton>
         </div>
       </div>
-      <div className={styles["hero__address"]}>
+      <div className={styles["hero__contacts"]}>
         <Link
           to="https://maps.app.goo.gl/UTyEsA13qhB9x7LTA"
           target="_blank"
@@ -40,7 +40,7 @@ const Hero: FC = () => {
         >
           79005, Ukraine, Lvivstreet. Shota Rustaveli, 7
         </Link>
-        <div className={styles["hero__address-mail-wrapper"]}>
+        <div className={styles["mail"]}>
           <Link
             to="mailto:office@ecosolution.com"
             style={{ textDecoration: "none" }}

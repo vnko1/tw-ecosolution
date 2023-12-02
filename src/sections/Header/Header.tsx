@@ -47,9 +47,9 @@ const Header: FC = () => {
       >
         <div className={styles["header__wrapper"]}>
           <Logo />
-          <div className={styles["header__btn-wrapper"]}>
+          <div className={styles["wrapper"]}>
             <UIButton
-              classNames={styles["header__menu-btn"]}
+              classNames={styles["button-menu"]}
               onClick={onHandleMenuClick}
               variant="icon"
               iconSize={16}
@@ -58,7 +58,7 @@ const Header: FC = () => {
 
             <UIButton
               onClick={onHandleTouchBtnClick}
-              classNames={styles["header__touch-btn"]}
+              classNames={styles["button-touch"]}
               variant="contained"
               iconSize={7}
               iconClassNames={styles["icon"]}

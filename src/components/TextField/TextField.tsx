@@ -42,7 +42,7 @@ const TextField: FC<TextFieldProps> = ({
 
   return (
     <label htmlFor={id} className={`${styles["field__label"]} ${classNames}`}>
-      <span className={styles["field__label-text"]}>{label}</span>
+      <span className={styles["label-text"]}>{label}</span>
       <Field
         {...field}
         {...props}
@@ -58,7 +58,7 @@ const TextField: FC<TextFieldProps> = ({
         <ErrorMessage
           name={name || "Field invalid"}
           component="span"
-          className={formClassnames(styles["error__text"])}
+          className={formClassnames(styles["error-text"])}
         />
       ) : null}
     </label>

@@ -2,8 +2,8 @@ import { FC } from "react";
 import Carousel, { CarouselInternalState } from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import { CasesCarouselProps } from "./CasesCarousel.type";
-import styles from "./CasesCarousel.module.scss";
+import { SliderProps } from "./Slider.type";
+import styles from "./Slider.module.scss";
 import Case from "../Case/Case";
 
 const responsive = {
@@ -24,11 +24,7 @@ const responsive = {
   },
 };
 
-const CasesCarousel: FC<CasesCarouselProps> = ({
-  values,
-  setStep,
-  carouselRef,
-}) => {
+const Slider: FC<SliderProps> = ({ values, setStep, carouselRef }) => {
   const onHandleSteps = (
     nextSlide: number,
     { currentSlide }: CarouselInternalState
@@ -54,8 +50,8 @@ const CasesCarousel: FC<CasesCarouselProps> = ({
       shouldResetAutoplay
       beforeChange={onHandleSteps}
       arrows={false}
-      sliderClass={styles["carousel"]}
-      itemClass={styles["carousel__item"]}
+      sliderClass={styles["slider"]}
+      itemClass={styles["slider__item"]}
     >
       {values.map((el, i) => (
         <Case {...el} key={i} />
@@ -64,4 +60,4 @@ const CasesCarousel: FC<CasesCarouselProps> = ({
   );
 };
 
-export default CasesCarousel;
+export default Slider;

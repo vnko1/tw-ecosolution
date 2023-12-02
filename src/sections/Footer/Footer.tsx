@@ -25,7 +25,7 @@ const Footer: FC = () => {
         />
       </div>
       <div className={styles["footer__container-3"]}>
-        <div className={styles["icon-link"]}>
+        <div className={styles["links"]}>
           <NavLink
             icon={IconEnum.FACEBOOK}
             size={24}

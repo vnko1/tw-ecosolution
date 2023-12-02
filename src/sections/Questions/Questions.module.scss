@@ -1,12 +1,10 @@
 .questions {
-  &__wrapper {
-    &-text-content {
-      @apply tablet:flex tablet:flex-row-reverse tablet:justify-between;
-    }
+  &__content {
+    @apply tablet:flex tablet:flex-row-reverse tablet:justify-between;
   }
 }
 
-.wrapper {
+.content {
   &__title {
     @apply mb-2-md tablet:mb-0 tablet:flex tablet:flex-col tablet:w-1/2 tablet:pl-2-md tablet:justify-between laptop:items-center;
   }
@@ -24,7 +22,7 @@
   &.btn {
     @apply hidden tablet:flex;
   }
-  &--mob.btn {
+  &-mob.btn {
     @apply mt-2-md tablet:hidden;
   }
 }

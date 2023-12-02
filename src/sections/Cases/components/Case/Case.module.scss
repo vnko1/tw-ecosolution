@@ -1,5 +1,6 @@
 .case {
   @apply w-full h-full;
+
   &__image-thumb {
     @apply overflow-hidden h-full max-h-[294px] tablet:max-h-[192px] laptop:max-h-[335px];
 

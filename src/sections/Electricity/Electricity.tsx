@@ -38,11 +38,11 @@ const Electricity: FC = () => {
       <h2 className={styles["title"]}>
         Electricity we produced <br /> for all time
       </h2>
-      <p className={styles["electricity__values"]}>
-        <span className={styles["electricity__values-value"]}>
+      <p className={styles["text"]}>
+        <span className={styles["text__value"]}>
           {eValue.toLocaleString("de-DE")}
         </span>
-        <span className={styles["electricity__values-unit"]}>kWh</span>
+        <span className={styles["text__unit"]}>kWh</span>
       </p>
     </section>
   );

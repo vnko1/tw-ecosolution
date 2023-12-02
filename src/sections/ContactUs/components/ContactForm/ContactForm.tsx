@@ -51,7 +51,7 @@ const ContactForm: FC = () => {
         >
           {({ isValid, dirty, values }) => (
             <Form className={styles["form"]}>
-              <div className={styles["form__fields"]}>
+              <div className={styles["form__field"]}>
                 {keyValues.map((key, i) => {
                   if (key === "message")
                     return (
@@ -84,10 +84,10 @@ const ContactForm: FC = () => {
                 variant="outlined"
                 type="submit"
                 icon={IconEnum.ARROW}
-                iconClassNames={styles["button-icon"]}
+                iconClassNames={styles["icon"]}
                 iconSize={16}
                 disabled={!isValid || !dirty}
-                classNames={styles["form__button"]}
+                classNames={styles["button"]}
               >
                 Send
               </UIButton>

@@ -8,9 +8,9 @@ import { NavLink } from "@/src/components";
 const Contacts: FC = () => {
   return (
     <div className={styles["contacts"]}>
-      <div className={styles["contacts__tel-wrapper"]}>
+      <div>
         <p className={styles["label"]}>Phone</p>
-        <ul className={styles["wrapper"]}>
+        <ul className={styles["links"]}>
           <li>
             <NavLink link="tel:+380931234567" icon={IconEnum.CALL} size={24}>
               38 (093) 12 34 567
@@ -23,9 +23,9 @@ const Contacts: FC = () => {
           </li>
         </ul>
       </div>
-      <div className={styles["contacts__mail-wrapper"]}>
+      <div>
         <p className={styles["label"]}>E-mail:</p>
-        <div className={styles["wrapper"]}>
+        <div className={styles["links"]}>
           <NavLink
             link="mailto:office@ecosolution.com"
             icon={IconEnum.SMS}
@@ -35,9 +35,9 @@ const Contacts: FC = () => {
           </NavLink>
         </div>
       </div>
-      <div className={styles["contacts__address-wrapper"]}>
+      <div>
         <p className={styles["label"]}>Address:</p>
-        <div className={styles["wrapper"]}>
+        <div className={styles["links"]}>
           <NavLink
             link="https://maps.app.goo.gl/UTyEsA13qhB9x7LTA"
             icon={IconEnum.CALL}
@@ -48,9 +48,9 @@ const Contacts: FC = () => {
           </NavLink>
         </div>
       </div>
-      <div className={styles["contacts__soc-wrapper"]}>
+      <div>
         <p className={styles["label"]}>Social Networks:</p>
-        <div className={`${styles["wrapper"]} ${styles["soc"]}`}>
+        <div className={`${styles["links"]} ${styles["soc"]}`}>
           <NavLink icon={IconEnum.FACEBOOK} size={24} target="_blank" />
           <NavLink icon={IconEnum.INSTAGRAM} size={24} target="_blank" />
         </div>

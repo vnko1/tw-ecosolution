@@ -16,10 +16,10 @@ const ContactUs: FC = () => {
     >
       <h2 className={styles["title"]}>Contact us</h2>
       <div className={styles["contact-us__wrapper"]}>
-        <div className={styles["contact-us__contacts-wrapper"]}>
+        <div className={styles["contacts"]}>
           <Contacts />
         </div>
-        <div className={styles["contact-us__form-wrapper"]}>
+        <div className={styles["form"]}>
           <ContactForm />
         </div>
       </div>

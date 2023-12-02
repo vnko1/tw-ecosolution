@@ -1,2 +1,2 @@
-export { default as CasesCarousel } from "./CasesCarousel/CasesCarousel";
+export { default as Slider } from "./Slider/Slider";
 export { default as Case } from "./Case/Case";

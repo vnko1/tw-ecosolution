@@ -1,14 +1,14 @@
 import { FC } from "react";
 
-import { ContactUsButtonProps } from "./ContactUsButton.type";
+import { ContactUsProps } from "./ContactUs.type";
 import { IconEnum, SectionsId } from "@/src/types";
-import styles from "./ContactUsButton.module.scss";
+import styles from "./ContactUs.module.scss";
 import { UIButton } from "@/src/components";
 import { scrollTo } from "@/src/utils";
 
-const ContactUsButton: FC<ContactUsButtonProps> = ({ classNames }) => {
+const ContactUs: FC<ContactUsProps> = ({ classNames }) => {
   return (
-    <div className={`${styles["wrapper"]} ${classNames}`}>
+    <div className={`${styles["contact-us"]} ${classNames}`}>
       <p className={styles["text"]}>Didn't find the answer to your question?</p>
       <UIButton
         variant="contained"
@@ -24,4 +24,4 @@ const ContactUsButton: FC<ContactUsButtonProps> = ({ classNames }) => {
   );
 };
 
-export default ContactUsButton;
+export default ContactUs;

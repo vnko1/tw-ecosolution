@@ -4,13 +4,14 @@
   &__wrapper {
     @apply tablet:flex;
   }
-  &__contacts-wrapper {
-    @apply tablet:w-1/2;
-  }
+}
 
-  &__form-wrapper {
-    @apply pt-2-md tablet:pt-0 tablet:w-1/2;
-  }
+.contacts {
+  @apply tablet:w-1/2;
+}
+
+.form {
+  @apply pt-2-md tablet:pt-0 tablet:w-1/2;
 }
 
 .title {

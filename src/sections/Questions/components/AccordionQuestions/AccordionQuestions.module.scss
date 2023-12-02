@@ -11,11 +11,13 @@
 
   &__wrapper {
     @apply relative;
+  }
+}
 
-    &-box {
-      &.box {
-        @apply pl-2-md pr-0 tablet:pl-[44px] laptop:pl-[52px];
-      }
+.wrapper {
+  &__content {
+    &.content {
+      @apply pl-2-md pr-0 tablet:pl-[44px] laptop:pl-[52px];
     }
   }
 }

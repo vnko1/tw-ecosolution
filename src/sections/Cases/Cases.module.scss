@@ -3,11 +3,11 @@
     @apply mb-2-md tablet:mb-3-md tablet:flex tablet:justify-between tablet:items-end laptop:mb-4-md;
   }
 
-  &__title-wrapper {
+  &__title {
     @apply tablet:w-1/2 tablet:border-r-[0.5px] tablet:border-r-green;
   }
 
-  &__data-wrapper {
+  &__data {
     @apply tablet:w-1/2 tablet:border-l-[0.5px] tablet:border-l-green tablet:pl-0-md laptop:pl-[160px];
   }
 }
@@ -19,15 +19,15 @@
 .data {
   @apply flex items-end justify-between;
 
-  &__text-value {
-    @apply font-light text-[28px] tracking-[-1.12px] text-darkGreen;
-    & > span {
-      @apply text-[#173d3340];
-    }
-  }
-
-  &__btn-group {
+  &__button {
     @apply flex gap-1-sm laptop:gap-2-md;
+  }
+}
+
+.step-value {
+  @apply font-light text-[28px] tracking-[-1.12px] text-darkGreen;
+  & > span {
+    @apply text-[#173d3340];
   }
 }
 
