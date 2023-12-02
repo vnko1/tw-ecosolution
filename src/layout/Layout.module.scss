@@ -1,0 +1,5 @@
+.layout {
+  &__container {
+    @apply w-full max-w-[480px] tablet:max-w-[768px] laptop:max-w-[1280px] laptop_md:max-w-[1440px] mx-auto px-2-xs tablet:px-3-xs laptop:px-[80px] laptop_md:px-[100px];
+  }
+}
