@@ -17,7 +17,8 @@
   &-menu {
     @apply bg-lightGreen text-black;
 
-    &:hover {
+    &:hover,
+    &:focus {
       @apply bg-green;
     }
   }

@@ -8,12 +8,12 @@ import styles from "./Cases.module.scss";
 import { UIButton } from "@/src/components";
 import { Slider } from "./components";
 
-import { casesValue } from "./data";
+import data from "./data.json";
 
 const Cases: FC = () => {
   const casesRef = useNav(SectionsId.CASES);
   const [activeStep, setActiveStep] = useState(1);
-  const maxSteps = casesValue.length;
+  const maxSteps = data.length;
 
   const carouselRef = useRef<Carousel | null>(null);
 
@@ -44,6 +44,7 @@ const Cases: FC = () => {
                 iconSize={36}
                 classNames={`${styles["button"]} ${styles["button-icon"]}`}
                 icon={IconEnum.ARROW}
+                aria-label="Arrow-left"
               />
               <UIButton
                 onClick={handleNext}
@@ -52,16 +53,13 @@ const Cases: FC = () => {
                 iconClassNames={styles["button__icon"]}
                 classNames={`${styles["button"]} ${styles["button-icon"]}`}
                 icon={IconEnum.ARROW}
+                aria-label="Arrow-right"
               />
             </div>
           </div>
         </div>
       </div>
-      <Slider
-        values={casesValue}
-        setStep={setActiveStep}
-        carouselRef={carouselRef}
-      />
+      <Slider values={data} setStep={setActiveStep} carouselRef={carouselRef} />
     </section>
   );
 };

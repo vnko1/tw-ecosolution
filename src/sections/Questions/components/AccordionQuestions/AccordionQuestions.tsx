@@ -3,15 +3,14 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 
-import { PanelKey } from "../../Questions.type";
 import { AccordionQuestionsProps } from "./AccordionQuestions.type";
 import styles from "./AccordionQuestions.module.scss";
 
 const AccordionQuestions: FC<AccordionQuestionsProps> = ({ questions }) => {
-  const [expanded, setExpanded] = useState<PanelKey | false>("panel1");
+  const [expanded, setExpanded] = useState<string | false>("panel1");
 
   const handleChange =
-    (panel: PanelKey) => (_event: SyntheticEvent, newExpanded: boolean) => {
+    (panel: string) => (_event: SyntheticEvent, newExpanded: boolean) => {
       setExpanded(newExpanded ? panel : false);
     };
   return (

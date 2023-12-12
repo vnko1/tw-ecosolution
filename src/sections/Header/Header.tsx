@@ -4,9 +4,8 @@ import cn from "classnames";
 import { useNav } from "@/src/hooks";
 import { scrollTo } from "@/src/utils";
 import { IconEnum, SectionsId } from "@/src/types";
-import styles from "./Header.module.scss";
-
 import { Logo, UIButton, Menu } from "@/src/components";
+import styles from "./Header.module.scss";
 
 const Header: FC = () => {
   const headerRef = useNav(SectionsId.HEADER);
@@ -54,6 +53,7 @@ const Header: FC = () => {
               variant="icon"
               iconSize={16}
               icon={IconEnum.MENU}
+              aria-label="Menu"
             />
 
             <UIButton

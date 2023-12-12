@@ -1,19 +1,13 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Form, Formik, FormikHelpers } from "formik";
 
+import { IconEnum } from "@/src/types";
+import { UIButton, TextField } from "@/src/components";
 import { ContactsFormValue } from "./ContactForm.type";
 import { validationSchema } from "./validationSchema";
-import { IconEnum } from "@/src/types";
 import styles from "./ContactForm.module.scss";
+import { getValuesFromLS, removeDataFromLS } from "@/src/utils";
 
-import { UIButton, TextField } from "@/src/components";
-
-const initialValues: ContactsFormValue = {
-  fullName: "",
-  email: "",
-  phone: "",
-  message: "",
-};
 const formsData = {
   fullName: { label: "* Full name:", placeholder: "John Rosie" },
   email: { label: "* E-mail:", placeholder: "johnrosie@gmail.com" },
@@ -21,35 +15,57 @@ const formsData = {
   message: { label: "Message:", placeholder: "Your message" },
 };
 
+const initialValues = {
+  fullName: "",
+  email: "",
+  phone: "",
+  message: "",
+};
+
 const keyValues = Object.keys(initialValues);
 
 const ContactForm: FC = () => {
+  const [values] = useState(
+    getValuesFromLS<ContactsFormValue>(
+      initialValues,
+      "fullName",
+      "email",
+      "phone",
+      "message"
+    )
+  );
+  const [showUMessage, setShowUMessage] = useState(false);
+
   const onHandleSubmit = (
     values: ContactsFormValue,
     { resetForm }: FormikHelpers<ContactsFormValue>
   ) => {
-    const keys = Object.keys(values);
-
-    const trimmedValue = keys.reduce((acc, el) => {
-      return { [el]: values[el as keyof ContactsFormValue].trim(), ...acc };
-    }, {});
-
-    console.log(
-      "🚀 ~ file: ContactForm.tsx:40 ~ trimmedValue ~ trimmedValue:",
-      trimmedValue
+    const trimmedValue = Object.keys(values).reduce(
+      (acc, el) => ({
+        [el]: values[el as keyof ContactsFormValue].trim(),
+        ...acc,
+      }),
+      {}
     );
 
-    resetForm();
+    console.log(trimmedValue);
+    setShowUMessage(true);
+    removeDataFromLS("fullName", "email", "phone", "message");
+    resetForm({ values: initialValues });
+    setTimeout(() => {
+      setShowUMessage(false);
+    }, 2000);
   };
+
   return (
     <div className={styles["contact-form"]}>
-      {
-        <Formik
-          initialValues={initialValues}
-          onSubmit={onHandleSubmit}
-          validationSchema={validationSchema}
-        >
-          {({ isValid, dirty, values }) => (
+      <Formik
+        initialValues={values}
+        onSubmit={onHandleSubmit}
+        validationSchema={validationSchema}
+      >
+        {({ isValid, values }) => {
+          return (
             <Form className={styles["form"]}>
               <div className={styles["form__field"]}>
                 {keyValues.map((key, i) => {
@@ -80,21 +96,26 @@ const ContactForm: FC = () => {
                   );
                 })}
               </div>
-              <UIButton
-                variant="outlined"
-                type="submit"
-                icon={IconEnum.ARROW}
-                iconClassNames={styles["icon"]}
-                iconSize={16}
-                disabled={!isValid || !dirty}
-                classNames={styles["button"]}
-              >
-                Send
-              </UIButton>
+              <div className={styles["form__wrapper"]}>
+                <UIButton
+                  variant="outlined"
+                  type="submit"
+                  icon={IconEnum.ARROW}
+                  iconClassNames={styles["icon"]}
+                  iconSize={16}
+                  disabled={!isValid}
+                  classNames={styles["button"]}
+                >
+                  Send
+                </UIButton>
+                {showUMessage ? (
+                  <p className={styles["message"]}>Your message was sent</p>
+                ) : null}
+              </div>
             </Form>
-          )}
-        </Formik>
-      }
+          );
+        }}
+      </Formik>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { ChangeEvent, FC } from "react";
 import { ErrorMessage, Field, useField, useFormikContext } from "formik";
 import cn from "classnames";
 
+import { setDataToLS } from "@/src/utils";
 import { TextFieldProps } from "./TextField.type";
 import styles from "./TextField.module.scss";
 
@@ -26,6 +27,7 @@ const TextField: FC<TextFieldProps> = ({
   const onHandleChangeField = (event: ChangeEvent<HTMLInputElement>) => {
     setFieldValue(field.name, event.target.value);
     onChange && onChange(event);
+    setDataToLS(field.name, event.target.value);
   };
 
   const formClassnames = (

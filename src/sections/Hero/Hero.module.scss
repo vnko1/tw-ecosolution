@@ -1,5 +1,5 @@
 .hero {
-  @apply pt-[222px] tablet:pt-[240px] laptop:pt-[264px] pb-[236px] tablet:pb-[388px] laptop:pb-[560px] bg-[url('../../assets/images/hero.webp')] bg-no-repeat bg-contain bg-bottom;
+  @apply pt-[222px] tablet:pt-[240px] laptop:pt-[264px] pb-[236px] tablet:pb-[388px] laptop:pb-[560px] bg-[url('/images/hero.webp')] bg-no-repeat bg-contain bg-bottom;
 
   &__content {
     @apply flex flex-col justify-between gap-2-md tablet:gap-0 tablet:flex-row pb-2-md border-b border-b-green;

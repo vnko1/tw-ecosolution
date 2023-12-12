@@ -36,7 +36,10 @@ p {
 }
 
 a {
-  @apply cursor-pointer no-underline;
+  @apply inline-block cursor-pointer no-underline;
+}
+button {
+  @apply inline-block;
 }
 
 #wrapper {
@@ -46,7 +49,8 @@ a {
 a:not([class]) {
   @apply no-underline cursor-pointer;
 
-  &:hover {
+  &:hover,
+  &:focus {
     @apply underline;
   }
 }

@@ -1,9 +1,8 @@
 import { FC } from "react";
 
 import { IconEnum } from "@/src/types";
-import styles from "./Contacts.module.scss";
-
 import { NavLink } from "@/src/components";
+import styles from "./Contacts.module.scss";
 
 const Contacts: FC = () => {
   return (
@@ -12,12 +11,22 @@ const Contacts: FC = () => {
         <p className={styles["label"]}>Phone</p>
         <ul className={styles["links"]}>
           <li>
-            <NavLink link="tel:+380931234567" icon={IconEnum.CALL} size={24}>
+            <NavLink
+              aria-label="Phone"
+              link="tel:+380931234567"
+              icon={IconEnum.CALL}
+              size={24}
+            >
               38 (093) 12 34 567
             </NavLink>
           </li>
           <li>
-            <NavLink link="tel:+380931234567" icon={IconEnum.CALL} size={24}>
+            <NavLink
+              aria-label="Phone"
+              link="tel:+380931234567"
+              icon={IconEnum.CALL}
+              size={24}
+            >
               38 (093) 12 34 567
             </NavLink>
           </li>
@@ -27,6 +36,7 @@ const Contacts: FC = () => {
         <p className={styles["label"]}>E-mail:</p>
         <div className={styles["links"]}>
           <NavLink
+            aria-label="Mail"
             link="mailto:office@ecosolution.com"
             icon={IconEnum.SMS}
             size={24}
@@ -39,10 +49,12 @@ const Contacts: FC = () => {
         <p className={styles["label"]}>Address:</p>
         <div className={styles["links"]}>
           <NavLink
+            aria-label="Location"
             link="https://maps.app.goo.gl/UTyEsA13qhB9x7LTA"
             icon={IconEnum.CALL}
             size={24}
             target="_blank"
+            rel="noopener noreferrer nofollow"
           >
             79005, Ukraine, Lvivstreet. Shota Rustaveli, 7
           </NavLink>
@@ -51,8 +63,20 @@ const Contacts: FC = () => {
       <div>
         <p className={styles["label"]}>Social Networks:</p>
         <div className={`${styles["links"]} ${styles["soc"]}`}>
-          <NavLink icon={IconEnum.FACEBOOK} size={24} target="_blank" />
-          <NavLink icon={IconEnum.INSTAGRAM} size={24} target="_blank" />
+          <NavLink
+            aria-label="Facebook"
+            icon={IconEnum.FACEBOOK}
+            size={24}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          />
+          <NavLink
+            aria-label="Instagram"
+            icon={IconEnum.INSTAGRAM}
+            size={24}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          />
         </div>
       </div>
     </div>

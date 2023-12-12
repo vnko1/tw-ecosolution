@@ -8,10 +8,10 @@
 }
 
 .text {
-  @apply flex gap-0-md justify-center items-center tablet:gap-2-md text-center font-oswald;
+  @apply flex justify-center items-center text-center font-oswald;
 
   &__value {
-    @apply text-green font-bold text-[48px] tablet:text-[100px] tablet:leading-[100px] laptop:text-[164px] laptop:leading-[164px];
+    @apply text-green text-start font-bold text-[48px] tablet:text-[100px] tablet:leading-[100px] laptop:text-[164px] laptop:leading-[164px] w-full max-w-[270px] tablet:max-w-[560px] laptop:max-w-[890px];
   }
   &__unit {
     @apply text-darkGreen  text-xl leading-[24px] tablet:text-[28px] tablet:leading-[48px] laptop:text-[48px];

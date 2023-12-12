@@ -2,9 +2,8 @@ import { FC } from "react";
 
 import { SectionsId } from "@/src/types";
 import { useNav } from "@/src/hooks";
-import styles from "./ContactUs.module.scss";
-
 import { Contacts, ContactForm } from "./components";
+import styles from "./ContactUs.module.scss";
 
 const ContactUs: FC = () => {
   const contactUsRef = useNav(SectionsId.CONTACT_US);

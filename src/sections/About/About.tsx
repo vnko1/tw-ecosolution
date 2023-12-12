@@ -2,8 +2,8 @@ import { FC } from "react";
 
 import { useNav } from "@/src/hooks";
 import { SectionsId } from "@/src/types";
-import styles from "./About.module.scss";
 import { Values } from "./components";
+import styles from "./About.module.scss";
 
 const About: FC = () => {
   const aboutRef = useNav(SectionsId.ABOUT);
