@@ -19,7 +19,7 @@ Welcome to the Ecosolution App! Feel free to explore the various features and en
 
 ## Getting Started
 
-To get started with the LightHearted App, simply visit [https://lighthearted-speculoos-bd192e.netlify.app/](https://lighthearted-speculoos-bd192e.netlify.app/) in your web browser.
+To get started with the Ecosolution App, simply visit [https://lighthearted-speculoos-bd192e.netlify.app/](https://lighthearted-speculoos-bd192e.netlify.app/) in your web browser.
 
 
 ## Contributing
