@@ -1,9 +1,9 @@
 import { FC } from "react";
 
 import { useGetScreenSize } from "@/src/hooks";
-import { ValueProps } from "./Value.type";
-import styles from "./Value.module.scss";
 import { Icon } from "@/src/components";
+import styles from "./Value.module.scss";
+import { ValueProps } from "./Value.type";
 
 const Value: FC<ValueProps> = ({ icon, title, text }) => {
   const [screenSize] = useGetScreenSize();

@@ -2,11 +2,10 @@ import { FC } from "react";
 
 import { useNav } from "@/src/hooks";
 import { SectionsId } from "@/src/types";
+import { AccordionQuestions, ContactUs } from "./components";
 import styles from "./Questions.module.scss";
 
-import { AccordionQuestions, ContactUs } from "./components";
-
-import { faq } from "./questionsValues";
+import data from "./data.json";
 
 const Questions: FC = () => {
   const questionsRef = useNav(SectionsId.QUESTIONS);
@@ -22,7 +21,7 @@ const Questions: FC = () => {
           <ContactUs classNames={`${styles["button"]} ${styles["btn"]}`} />
         </div>
         <div className={styles["content__accordion"]}>
-          <AccordionQuestions questions={faq} />
+          <AccordionQuestions questions={data} />
         </div>
         <ContactUs classNames={`${styles["button-mob"]} ${styles["btn"]}`} />
       </div>

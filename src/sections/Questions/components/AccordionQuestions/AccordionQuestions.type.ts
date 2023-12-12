@@ -1,3 +1,7 @@
-import { Question } from "../../Questions.type";
+export type Question = {
+  summary: string;
+  details: string;
+  expandValue: string;
+};
 
-export type AccordionQuestionsProps = { questions: Question[] };
+export type AccordionQuestionsProps = { questions: Array<Question> };

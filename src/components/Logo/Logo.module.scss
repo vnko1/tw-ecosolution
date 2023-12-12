@@ -4,11 +4,12 @@
     @apply place-self-center pt-2;
   }
   &__name {
-    @apply font-oswald text-[32px] font-medium;
+    @apply font-oswald text-[32px] font-medium transition-colors duration-150;
     letter-spacing: -1.32px;
 
-    &:hover {
-      @apply text-green transition-colors duration-150;
+    &:hover,
+    &:focus {
+      @apply text-green;
     }
   }
 

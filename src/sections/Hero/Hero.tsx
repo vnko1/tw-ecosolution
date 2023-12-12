@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 
 import { useNav } from "@/src/hooks";
 import { IconEnum, SectionsId } from "@/src/types";
-import styles from "./Hero.module.scss";
-
 import { UIButton } from "@/src/components";
 import { scrollTo } from "@/src/utils";
+import styles from "./Hero.module.scss";
 
 const Hero: FC = () => {
   const heroRef = useNav(SectionsId.HERO);
@@ -37,6 +36,8 @@ const Hero: FC = () => {
           to="https://maps.app.goo.gl/UTyEsA13qhB9x7LTA"
           target="_blank"
           style={{ textDecoration: "none" }}
+          rel="noopener noreferrer nofollow"
+          aria-label="Location"
         >
           79005, Ukraine, Lvivstreet. Shota Rustaveli, 7
         </Link>
@@ -44,6 +45,7 @@ const Hero: FC = () => {
           <Link
             to="mailto:office@ecosolution.com"
             style={{ textDecoration: "none" }}
+            aria-label="Mail"
           >
             office@ecosolution.com
           </Link>

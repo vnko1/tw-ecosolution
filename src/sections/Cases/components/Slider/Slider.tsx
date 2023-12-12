@@ -2,9 +2,9 @@ import { FC } from "react";
 import Carousel, { CarouselInternalState } from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
+import Case from "../Case/Case";
 import { SliderProps } from "./Slider.type";
 import styles from "./Slider.module.scss";
-import Case from "../Case/Case";
 
 const responsive = {
   desktop: {

@@ -1,18 +1,22 @@
-import { FC } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { Form, Formik, FormikHelpers } from "formik";
 
+import { IconEnum } from "@/src/types";
+import { getDataFromLS } from "@/src/utils";
+import { UIButton, TextField, Animation } from "@/src/components";
 import { ContactsFormValue } from "./ContactForm.type";
 import { validationSchema } from "./validationSchema";
-import { IconEnum } from "@/src/types";
 import styles from "./ContactForm.module.scss";
 
-import { UIButton, TextField } from "@/src/components";
-
 const initialValues: ContactsFormValue = {
-  fullName: "",
-  email: "",
-  phone: "",
-  message: "",
+  fullName: getDataFromLS("fullName")
+    ? JSON.parse(getDataFromLS("fullName") || "")
+    : "",
+  email: getDataFromLS("email") ? JSON.parse(getDataFromLS("email") || "") : "",
+  phone: getDataFromLS("phone") ? JSON.parse(getDataFromLS("phone") || "") : "",
+  message: getDataFromLS("message")
+    ? JSON.parse(getDataFromLS("message") || "")
+    : "",
 };
 const formsData = {
   fullName: { label: "* Full name:", placeholder: "John Rosie" },
@@ -24,6 +28,8 @@ const formsData = {
 const keyValues = Object.keys(initialValues);
 
 const ContactForm: FC = () => {
+  const [showUMessage, setShowUMessage] = useState(false);
+  const nodeRef = useRef(null);
   const onHandleSubmit = (
     values: ContactsFormValue,
     { resetForm }: FormikHelpers<ContactsFormValue>
@@ -38,9 +44,22 @@ const ContactForm: FC = () => {
       "🚀 ~ file: ContactForm.tsx:40 ~ trimmedValue ~ trimmedValue:",
       trimmedValue
     );
+    setShowUMessage(true);
 
     resetForm();
   };
+
+  useEffect(() => {
+    let t: number;
+    if (showUMessage) {
+      t = setTimeout(() => {
+        setShowUMessage(false);
+      }, 2000);
+    }
+
+    return () => clearTimeout(t);
+  }, [showUMessage]);
+
   return (
     <div className={styles["contact-form"]}>
       {
@@ -48,6 +67,7 @@ const ContactForm: FC = () => {
           initialValues={initialValues}
           onSubmit={onHandleSubmit}
           validationSchema={validationSchema}
+          validateOnMount
         >
           {({ isValid, dirty, values }) => (
             <Form className={styles["form"]}>
@@ -91,6 +111,9 @@ const ContactForm: FC = () => {
               >
                 Send
               </UIButton>
+              <Animation nodeRef={nodeRef}>
+                <p>Your message is sent</p>
+              </Animation>
             </Form>
           )}
         </Formik>

@@ -1,10 +1,10 @@
 import { FC } from "react";
 
-import { ContactUsProps } from "./ContactUs.type";
 import { IconEnum, SectionsId } from "@/src/types";
-import styles from "./ContactUs.module.scss";
 import { UIButton } from "@/src/components";
 import { scrollTo } from "@/src/utils";
+import { ContactUsProps } from "./ContactUs.type";
+import styles from "./ContactUs.module.scss";
 
 const ContactUs: FC<ContactUsProps> = ({ classNames }) => {
   return (

@@ -1,15 +1,14 @@
 import { FC } from "react";
-import { CaseProps } from "./Case.type";
 import { IconEnum } from "@/src/types";
-import styles from "./Case.module.scss";
-
 import { UIButton } from "@/src/components";
+import { CaseProps } from "./Case.type";
+import styles from "./Case.module.scss";
 
 const Case: FC<CaseProps> = ({ image, alt, title, text, date }) => {
   return (
     <div className={styles["case"]}>
       <div className={styles["case__image-thumb"]}>
-        <img src={image} alt={alt} />
+        <img src={image} alt={alt} loading="lazy" width="596" height="336" />
       </div>
       <div className={styles["case__content"]}>
         <div className={styles["content__top"]}>
@@ -21,6 +20,7 @@ const Case: FC<CaseProps> = ({ image, alt, title, text, date }) => {
             classNames={`${styles["button"]} ${styles["button-icon"]}`}
             iconClassNames={styles["button__icon"]}
             iconSize={28}
+            aria-label="Arrow"
           />
         </div>
         <div className={styles["content__bottom"]}>

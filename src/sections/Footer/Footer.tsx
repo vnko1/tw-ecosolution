@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { useNav } from "@/src/hooks";
 import { scrollTo } from "@/src/utils";
 import { IconEnum, SectionsId } from "@/src/types";
-import styles from "./Footer.module.scss";
 import { NavLink, Logo, UIButton } from "@/src/components";
+import styles from "./Footer.module.scss";
 
 const Footer: FC = () => {
   const footerRef = useNav(SectionsId.FOOTER);
@@ -21,6 +21,7 @@ const Footer: FC = () => {
           icon={IconEnum.ARROW}
           iconClassNames={styles["button__icon"]}
           iconSize={16}
+          aria-label="Arrow"
           onClick={() => scrollTo(SectionsId.HERO)}
         />
       </div>
@@ -31,12 +32,16 @@ const Footer: FC = () => {
             size={24}
             target="_blank"
             classNames={`${styles["icon"]} ${styles["soc-icon"]}`}
+            rel="noopener noreferrer nofollow"
+            aria-label="Facebook"
           />
           <NavLink
             icon={IconEnum.INSTAGRAM}
             size={24}
             target="_blank"
             classNames={`${styles["icon"]} ${styles["soc-icon"]}`}
+            rel="noopener noreferrer nofollow"
+            aria-label="Instagram"
           />
         </div>
       </div>
@@ -46,6 +51,8 @@ const Footer: FC = () => {
           target="_blank"
           style={{ textDecoration: "none" }}
           className={styles["text"]}
+          rel="noopener noreferrer nofollow"
+          aria-label="Location"
         >
           79005, Ukraine, Lvivstreet. Shota Rustaveli, 7
         </Link>
@@ -54,6 +61,7 @@ const Footer: FC = () => {
         <Link
           to="mailto:office@ecosolution.com"
           style={{ textDecoration: "none" }}
+          aria-label="Mail"
         >
           office@ecosolution.com
         </Link>

@@ -7,4 +7,5 @@ export type NavLinkProps = {
   link?: string;
   children?: ReactNode;
   target?: string;
+  rel?: string;
 };

@@ -6,10 +6,9 @@ import { scrollTo } from "@/src/utils";
 import { useSwipe } from "@/src/hooks";
 import { useAppContext } from "@/src/context";
 import { IconEnum } from "@/src/types";
+import { Animation, Icon, UIButton } from "@/src/components";
 import { MenuProps } from "./Menu.type";
 import styles from "./Menu.module.scss";
-
-import { Animation, Icon, UIButton } from "@/src/components";
 
 const navItem = ["Main", "About", "Cases", "FAQ", "Contact Us"];
 

@@ -1,9 +1,9 @@
 import { FC } from "react";
 import cn from "classnames";
 
+import { Icon } from "@/src/components";
 import { UIButtonProps } from "./UIButton.type";
 import styles from "./UIButton.module.scss";
-import { Icon } from "@/src/components";
 
 const UIButton: FC<UIButtonProps> = ({
   children,

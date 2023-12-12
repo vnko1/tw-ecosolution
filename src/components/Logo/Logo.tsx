@@ -1,19 +1,13 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
 
-import { scrollTo } from "@/src/utils";
-import { IconEnum, SectionsId } from "@/src/types";
-import styles from "./Logo.module.scss";
-
+import { IconEnum } from "@/src/types";
 import { Icon } from "@/src/components";
+
+import styles from "./Logo.module.scss";
 
 const Logo: FC = () => {
   return (
-    <Link
-      to="/"
-      className={styles["logo"]}
-      onClick={() => scrollTo(SectionsId.HERO)}
-    >
+    <a href="/" className={styles["logo"]}>
       <Icon icon={IconEnum.LOGO} size={32} />
       <span className={styles["logo__name"]}>ecosolution</span>
       <span className={styles["logo__text"]}>
@@ -23,7 +17,7 @@ const Logo: FC = () => {
         </span>
         FOR LIFE
       </span>
-    </Link>
+    </a>
   );
 };
 

@@ -42,7 +42,8 @@
 .close-button {
   @apply flex gap-0-sm items-center bg-transparent outline-none text-white text-lg transition-colors duration-150;
 
-  &:hover {
+  &:hover,
+  &:focus {
     @apply text-green;
   }
 
@@ -58,7 +59,8 @@
       @apply text-green;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       @apply text-white;
     }
   }
@@ -71,7 +73,8 @@
 .soc-link {
   @apply text-white transition-colors duration-150;
 
-  &:hover {
+  &:hover,
+  &:focus {
     @apply text-green;
   }
 }

@@ -1,6 +1,5 @@
 import { FC } from "react";
 
-import styles from "./Layout.module.scss";
 import {
   About,
   Header,
@@ -11,6 +10,7 @@ import {
   ContactUs,
   Footer,
 } from "@/src/sections";
+import styles from "./Layout.module.scss";
 
 const Layout: FC = () => {
   return (
