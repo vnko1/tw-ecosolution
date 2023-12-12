@@ -2,21 +2,16 @@ import { FC, useEffect, useState } from "react";
 import { Form, Formik, FormikHelpers } from "formik";
 
 import { IconEnum } from "@/src/types";
-import { getDataFromLS } from "@/src/utils";
 import { UIButton, TextField } from "@/src/components";
 import { ContactsFormValue } from "./ContactForm.type";
 import { validationSchema } from "./validationSchema";
 import styles from "./ContactForm.module.scss";
 
 const initialValues: ContactsFormValue = {
-  fullName: getDataFromLS("fullName")
-    ? JSON.parse(getDataFromLS("fullName") || "")
-    : "",
-  email: getDataFromLS("email") ? JSON.parse(getDataFromLS("email") || "") : "",
-  phone: getDataFromLS("phone") ? JSON.parse(getDataFromLS("phone") || "") : "",
-  message: getDataFromLS("message")
-    ? JSON.parse(getDataFromLS("message") || "")
-    : "",
+  fullName: "",
+  email: "",
+  phone: "",
+  message: "",
 };
 const formsData = {
   fullName: { label: "* Full name:", placeholder: "John Rosie" },
@@ -44,7 +39,6 @@ const ContactForm: FC = () => {
       trimmedValue
     );
     setShowUMessage(true);
-
     resetForm();
   };
 
@@ -66,7 +60,6 @@ const ContactForm: FC = () => {
           initialValues={initialValues}
           onSubmit={onHandleSubmit}
           validationSchema={validationSchema}
-          validateOnMount
         >
           {({ isValid, dirty, values }) => (
             <Form className={styles["form"]}>
@@ -99,18 +92,22 @@ const ContactForm: FC = () => {
                   );
                 })}
               </div>
-              <UIButton
-                variant="outlined"
-                type="submit"
-                icon={IconEnum.ARROW}
-                iconClassNames={styles["icon"]}
-                iconSize={16}
-                disabled={!isValid || !dirty}
-                classNames={styles["button"]}
-              >
-                Send
-              </UIButton>
-              {showUMessage ? <p>Your message is sent</p> : null}
+              <div className={styles["form__wrapper"]}>
+                <UIButton
+                  variant="outlined"
+                  type="submit"
+                  icon={IconEnum.ARROW}
+                  iconClassNames={styles["icon"]}
+                  iconSize={16}
+                  disabled={!isValid || !dirty}
+                  classNames={styles["button"]}
+                >
+                  Send
+                </UIButton>
+                {showUMessage ? (
+                  <p className={styles["message"]}>Your message is sent</p>
+                ) : null}
+              </div>
             </Form>
           )}
         </Formik>

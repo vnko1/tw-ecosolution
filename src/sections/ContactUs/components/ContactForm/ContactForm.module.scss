@@ -4,6 +4,10 @@
   &__field {
     @apply flex flex-col gap-2-xl laptop:gap-3-sm;
   }
+
+  &__wrapper {
+    @apply relative;
+  }
 }
 
 .button {
@@ -11,4 +15,8 @@
 }
 .icon {
   @apply rotate-180;
+}
+
+.message {
+  @apply absolute -bottom-6 right-0;
 }
